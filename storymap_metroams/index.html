@@ -8,19 +8,57 @@
 <body>
 
 	<!-- Location menu -->
-	<div class="Menu">
-		<button class="btn" onclick="Fly(5.3,52.0, 8);">Nederland</button>
-		<button class="btn" onclick="Fly(4.904,52.370);">Amsterdam</button>
-		<!-- <button class="btn" onclick="Play();">Play</button> -->
+	<div class="ChapList">
+		<div class="ChapItem" onclick="Fly(5.30,52.0, 8); filterBy(1);"> 
+			<img class="ChapItemLogo" src="imgs/trafficlight.png">
+			<p class="ChapItemBtn" >Hoofdstuk 1</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(4.904,52.370); filterBy(4);">
+			<img class="ChapItemLogo" src="imgs/truck.png">
+			<p class="ChapItemBtn" >Hoofdstuk 2</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(4.310,52.080); filterBy(7);">
+			<img class="ChapItemLogo" src="imgs/polution.png">
+			<p class="ChapItemBtn" >Hoofdstuk 3</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(4.495,51.909); filterBy(16);">
+			<img class="ChapItemLogo" src="imgs/truck.png">
+			<p class="ChapItemBtn">Hoofdstuk 4</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(5.120,52.067); filterBy(1);">
+			<img class="ChapItemLogo" src="imgs/polution.png">
+			<p class="ChapItemBtn">Hoofdstuk 5</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(5.495,51.439); filterBy(7);">
+			<img class="ChapItemLogo" src="imgs/trafficjam.png">
+			<p class="ChapItemBtn">Hoofdstuk 6</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(5.699,50.852); filterBy(1);">
+			<img class="ChapItemLogo" src="imgs/trafficlight.png">
+			<p class="ChapItemBtn">Hoofdstuk 7</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(6.161,52.254); filterBy(7);">
+			<img class="ChapItemLogo" src="imgs/truck.png">
+			<p class="ChapItemBtn">Hoofdstuk 8</p> 
+		</div>
+		<div class="ChapItem" onclick="Fly(6.570,53.208); filterBy(1);">
+			<img class="ChapItemLogo" src="imgs/polution.png">
+			<p class="ChapItemBtn">Hoofdstuk 9</p> 
+		</div>
+	</div>
+
+
+	<div class="textbox" id="text1">
+		<h1>Hoofstuk een</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum. </p>
 	</div>
 
 	<!-- Time info box -->
-<!-- 
-	<div class="TimeDiv">
-		<p id="TimeDisplay">8:00</p>
+	<div class="hoverinfo">
+		<p id="hoverinfotest">Lorem ipsum dolor sit amet</p>
 	</div>
- -->	
-  	<img class="logo" src="dat-logo-mobility-wit.png">
+
+  	<img class="logo" src="imgs/metroams.png">
 
 	<!-- Map -->
 	<div id="map"></div>

@@ -102,3 +102,19 @@ function PNext(newnow) {
 
 //<button onclick="myVar = setTimeout(myFunction, 3000)">Try it</button>
 //<button onclick="clearTimeout(myVar)">Stop it</button>
+
+
+
+
+map.on('mousemove', function(e) {
+  var data = map.queryRenderedFeatures(e.point, {
+    layers: ['gsm-blau']
+  });
+
+  if (data != undefined) {
+    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + data[1].properties.load6 + '</p><p>10:00: ' + data[1].properties.load10 + '</p><p>18:00: ' + data[1].properties.load18 + '</p><p>20:00: ' + data[1].properties.load20 + '</p><p>23:00: ' + data[1].properties.load23 + '</p>';
+  	console.log(data)
+  } else {
+    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p><p>Hover over data.</p>';
+  }
+});

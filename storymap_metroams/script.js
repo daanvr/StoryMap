@@ -17,7 +17,7 @@ var map = new mapboxgl.Map({
 
 //Map controles Toggols
 map.addControl(new mapboxgl.NavigationControl());
-//map.scrollZoom.disable();
+// map.scrollZoom.disable();
 // map.boxZoom.disable();
 // map.dragRotate.disable();
 // map.dragPan.disable();
@@ -25,8 +25,10 @@ map.addControl(new mapboxgl.NavigationControl());
 // map.doubleClickZoom.disable();
 // map.touchZoomRotate.disable();
 
-Fly(5.3,52.0, 8);
+Fly(4.904,52.370, 9);
 
+
+//To be deleted when the new data arives
 map.on("load", function initiatefilter() {
   //Initiate Filter
   filterBy("" + 8 + "");
@@ -40,18 +42,12 @@ map.on("load", function initiatefilter() {
   });
 });
 
-
+// USed for time now, might be used for different chapters later
 function filterBy(SliderValue){
   now = Number(SliderValue);
 
   var currenthour = "load" + SliderValue;
   var TimeToDisplay = SliderValue + ":00";
-
-  //loading, edditing, and setting style color
-  //var propCol= map.getPaintProperty("gsm-blau", "line-color");
-  //console.log(propCol);  
-  //propCol[2][1] = currenthour;
-  //map.setPaintProperty("gsm-blau", "line-color", propCol);
 
   //loading, edditing, and setting style variable. this is where the style of 
   //the map is queried to get the exact specifications and then the time used as 

@@ -36,7 +36,7 @@ chapters[1] = {
     chapnbr:2,
     title:"Hoofdstuk 2",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.30,52.0, 8],
+    location: [5.30,52.0, 11],
     maplayers: "",
     UIToggles: "",
     iconsrc: "imgs/truck.png"
@@ -44,7 +44,7 @@ chapters[1] = {
 chapters[2] = {
     chapnbr:3,
     title:"Hoofdstuk 3",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
+    htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
     location: [4.310,52.080],
     maplayers: "",
     UIToggles: "",

@@ -10,92 +10,20 @@
 
 	<!-- Map -->
 	<div id="map">
+
 		<!-- Time info box -->
-		<div class="hoverinfo" id="hoverinfobox">
-		</div>
+		<div class="hoverinfo" id="hoverinfobox"></div>
+
 	</div>
 
-	<!-- Chapters in list/menu -->
-	<div class="ChapList">
-		<div class="ChapItem" id="Chap1" onclick="Fly(5.30,52.0, 8); SelectNew(1);"> 
-			<img class="ChapItemLogo" src="imgs/trafficlight.png">
-			<p class="ChapItemBtn" >Hoofdstuk 1</p> 
-		</div>
-		<div class="ChapItem" id="Chap2" onclick="Fly(4.904,52.370); SelectNew(2);">
-			<img class="ChapItemLogo" src="imgs/truck.png">
-			<p class="ChapItemBtn" >Hoofdstuk 2</p> 
-		</div>
-		<div class="ChapItem" id="Chap3" onclick="Fly(4.310,52.080); SelectNew(3);">
-			<img class="ChapItemLogo" src="imgs/polution.png">
-			<p class="ChapItemBtn" >Hoofdstuk 3</p> 
-		</div>
-		<div class="ChapItem" id="Chap4" onclick="Fly(4.495,51.909); SelectNew(4);">
-			<img class="ChapItemLogo" src="imgs/truck.png">
-			<p class="ChapItemBtn">Hoofdstuk 4</p> 
-		</div>
-		<div class="ChapItem" id="Chap5" onclick="Fly(5.120,52.067); SelectNew(5);">
-			<img class="ChapItemLogo" src="imgs/polution.png">
-			<p class="ChapItemBtn">Hoofdstuk 5</p> 
-		</div>
-		<div class="ChapItem" id="Chap6" onclick="Fly(5.495,51.439); SelectNew(6);">
-			<img class="ChapItemLogo" src="imgs/trafficjam.png">
-			<p class="ChapItemBtn">Hoofdstuk 6</p> 
-		</div>
-		<div class="ChapItem" id="Chap7" onclick="Fly(5.699,50.852); SelectNew(7);">
-			<img class="ChapItemLogo" src="imgs/trafficlight.png">
-			<p class="ChapItemBtn">Hoofdstuk 7</p> 
-		</div>
-		<div class="ChapItem" id="Chap8" onclick="Fly(6.161,52.254); SelectNew(8);">
-			<img class="ChapItemLogo" src="imgs/truck.png">
-			<p class="ChapItemBtn">Hoofdstuk 8</p> 
-		</div>
-		<div class="ChapItem" id="Chap9" onclick="Fly(6.570,53.208); SelectNew(9);">
-			<img class="ChapItemLogo" src="imgs/polution.png">
-			<p class="ChapItemBtn">Hoofdstuk 9</p> 
-		</div>
-	</div>
+	<!-- Chapters in menu -->
+	<div class="ChapList" id="ChapList"></div>
 
-	<!-- adding stories at right srcole carousel -->
-	<div class="stories">
-		<div class="story" id="Story1" onclick="Fly(5.30,52.0, 8); SelectNew(1);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story2" onclick="Fly(4.904,52.370); SelectNew(2);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story3" onclick="Fly(4.310,52.080); SelectNew(3);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story4" onclick="Fly(4.495,51.909); SelectNew(4);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story5" onclick="Fly(5.120,52.067); SelectNew(5);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story6" onclick="Fly(5.495,51.439); SelectNew(6);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story7" onclick="Fly(5.699,50.852); SelectNew(7);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>
-		<div class="story" id="Story8" onclick="Fly(6.161,52.254); SelectNew(8);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>	
-		<div class="story" id="Story9" onclick="Fly(6.570,53.208); SelectNew(9);">
-			<h1>Hoofdstuk 1</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
-		</div>	
-	</div>
+	<!-- stories in right srcole carousel -->
+	<div class="stories" id="stories"></div>
 
 	<!-- Run Script -->
 	<script type="text/javascript" src="script.js"></script>
+	
 </body>
 </html>

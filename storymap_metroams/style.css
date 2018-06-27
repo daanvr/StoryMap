@@ -51,6 +51,9 @@ p {
  	border-color: green;
 	max-height: 35px;
 	float: right;
+	border-bottom: 1px solid #ddd;
+
+
 
 }
 

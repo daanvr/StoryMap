@@ -22,6 +22,9 @@ map.addControl(nav, 'bottom-right');
 //initial Flight
 Fly(4.904,52.370, 9);
 
+//set language to NL
+//map.setLayoutProperty('country-label-lg', 'text-field', ['get', 'name_' + language]);
+
 
 SelectNew(3);
 //Select relevant storiues and chapters
@@ -71,16 +74,45 @@ function Fly(Long, Lat, Zoom) {
   });
 };
 
-//Code snippet used to populate the infor box with data about the layer
-map.on('mousemove', function(e) {
-  var data = map.queryRenderedFeatures(e.point, {
-    layers: ['gsm-blau']
-  });
 
-  if (data[0].properties.load6 != undefined) {
-    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + data[0].properties.load6 + '</p>10:00: ' + data[1].properties.load10 + '</p><p>18:00: ' + data[1].properties.load18 + '</p><p>20:00: ' + data[1].properties.load20 + '</p><p>23:00: ' + data[1].properties.load23 + '</p>';
-  	console.log(data)
+// Create a popup, but don't add it to the map yet.
+var popup = new mapboxgl.Popup({
+    closeButton: false
+});
+
+var hoverinfobox = document.getElementById('hoverinfobox')
+
+//Code snippet used to populate the infor box with data about the layer
+map.on('mousemove','gsm-blau' , function(e) {
+  // Change the cursor style as a UI indicator.
+  map.getCanvas().style.cursor = 'pointer';
+  
+  // Single out the first found feature.
+  var HoverdData = e.features[0];
+
+  
+  hoverinfobox.innerHTML = '';
+
+
+  if (HoverdData.properties.load6 != undefined) {
+    hoverinfobox.innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + HoverdData.properties.load6 + '</p>10:00: ' + HoverdData.properties.load10 + '</p><p>18:00: ' + HoverdData.properties.load18 + '</p><p>20:00: ' + HoverdData.properties.load20 + '</p><p>23:00: ' + HoverdData.properties.load23 + '</p>';
+  	console.log(HoverdData)
   } else {
-    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>Hover over data.</p>';
+    hoverinfobox.innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>Hover over data.</p>';
   }
+
+  hoverinfobox.style.display = 'block';
+
+  // Display a popup with the name of the county
+  popup.setLngLat(e.lngLat)
+      .setText(
+      	"Aantal voertuigen om 6uur: " + HoverdData.properties.load6
+      	)
+      .addTo(map);
+});
+
+map.on('mouseleave', 'gsm-blau', function() {
+    map.getCanvas().style.cursor = '';
+    hoverinfobox.style.display = 'none';
+    popup.remove();
 });

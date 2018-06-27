@@ -50,6 +50,8 @@ p {
  	border-width: 2px;
  	border-color: green;
 	max-height: 35px;
+	float: right;
+
 }
 
 .ChapItem:hover {

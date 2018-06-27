@@ -26,24 +26,30 @@ Fly(4.904,52.370, 9);
 SelectNew(3);
 //Select relevant storiues and chapters
 function SelectNew(Storynbr){
-  console.log("Selected Story number: " + Storynbr);
+  	console.log("Selected Story number: " + Storynbr);
   	var newchapter = "Chap" + Storynbr;
   	var newstory = "Story" + Storynbr;
   	console.log(newchapter, newstory);
   	var NewChapterDOM = document.getElementById(newchapter);
   	var NewStoryDOM = document.getElementById(newstory);
 
+  	//deselect all divs by class selected
+  	//var SelectedDIVs = document.getElementsByClassName("selected");
+	var SelectedDIVs = document.querySelectorAll( '.selected');
+	var i;
+	for (i = 0; i < SelectedDIVs.length; i++) {
+    	SelectedDIVs[i].classList.remove("selected");
+	}
+
   	//select correct Layers
 
   	//Select corredt icone in Stpry List
-   	NewChapterDOM.classList.add("selected");
+   	NewChapterDOM.classList.toggle("selected");
 
 	//Select and navigate to correct Story in sidebare
-   	NewStoryDOM.classList.add("selected");
-   	NewStoryDOM.scrollIntoView();
+   	NewStoryDOM.classList.toggle("selected");
+   	NewStoryDOM.scrollIntoView({behavior: "smooth"});
 	//Tooltip layers to be selection
-
-
 };
 
 //Code snippet used to fly the camera to a different location
@@ -72,9 +78,9 @@ map.on('mousemove', function(e) {
   });
 
   if (data[0].properties.load6 != undefined) {
-    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + data[0].properties.load6 + '</p><p>10:00: ' + data[1].properties.load10 + '</p><p>18:00: ' + data[1].properties.load18 + '</p><p>20:00: ' + data[1].properties.load20 + '</p><p>23:00: ' + data[1].properties.load23 + '</p>';
+    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + data[0].properties.load6 + '</p>10:00: ' + data[1].properties.load10 + '</p><p>18:00: ' + data[1].properties.load18 + '</p><p>20:00: ' + data[1].properties.load20 + '</p><p>23:00: ' + data[1].properties.load23 + '</p>';
   	console.log(data)
   } else {
-    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p><p>Hover over data.</p>';
+    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>Hover over data.</p>';
   }
 });

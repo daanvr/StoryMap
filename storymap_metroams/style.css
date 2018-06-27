@@ -5,16 +5,16 @@ body {
 }
 
 h1 {
-	color: white;
+	font: 20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 p {
-	color: white;
+	font: 13px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }	
 
 #map {
     position: absolute;
-    width:100vw;
+    width: 67vw;
     height: 100vh;
     top: 0px;
     left: 0px;
@@ -22,15 +22,21 @@ p {
 }
 
 .ChapList {
-	top: 87px;
+	top: 0px;
+	right: calc(33vw);
  	position: absolute;
  	margin: 10px;
-/* 	top: 50%;
- 	transform: translate(0, -50%);*/
  	border-radius: 5px;
  	background-color: white;
  	overflow: visible;
  	width: 35px;
+	z-index: 2;
+    box-shadow: 0px 0px 8px 0px #888888;
+ }
+
+ .ChapItem.selected{
+ 	background-color: #ddd;
+ 	border-radius: 0px;
  }
 
 .ChapList:hover {
@@ -81,6 +87,7 @@ p {
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 5px;
 	box-shadow: rgb(255, 255, 255);
+	z-index: 1;
 }
 
 .textbox {
@@ -88,7 +95,7 @@ p {
 	width: 25vw;
 	bottom: 40px;
 	left: 10px;
-	z-index: 500;
+	z-index: 1;
 	padding: 10px;
 	border-radius: 10px;
 	/*display: none;*/
@@ -104,7 +111,7 @@ p {
 .hoverinfo {
 	position: fixed;
 	top: 10px;
-	right: 70px;
+	left: 10px;
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
 	padding-left: 10px;
@@ -112,16 +119,37 @@ p {
 	width: auto;
 	overflow-x: hidden;
 	overflow-y: auto;
+	z-index: 1;
 }
 
 #hoverinfotest {
 	font-size: 13px;
 	font-family: sans-serif;
-	color: white;
 }
-h1.hoverinfo {
+h3.hoverinfo {
 	font-size: 30px;
 	font-family: sans-serif;
 	color: red !important;
 }
 
+
+
+/*Thie is the CSS for the right scrolling story line*/
+.stories {
+	position: absolute;
+	width: calc(33vw);
+	height: 100vh;
+	right: 0px;
+	overflow-y: auto;
+}
+
+.story {
+	min-height: 10px;
+    border-bottom: 1px solid #ddd;
+	background-color: white;
+	padding: 20px;
+}
+
+.story.selected {
+ 	background-color: #ddd;
+}

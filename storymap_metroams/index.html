@@ -7,62 +7,96 @@
 </head>
 <body>
 
-	<!-- Location menu -->
+
+	<!-- Map -->
+	<div id="map">
+		<!-- Time info box -->
+		<div class="hoverinfo">
+			<p id="hoverinfotest"></p>
+		</div>
+	</div>
+
+	<!-- Chapters in list/menu -->
 	<div class="ChapList">
-		<div class="ChapItem" onclick="Fly(5.30,52.0, 8); filterBy(1);"> 
+		<div class="ChapItem" id="Chap1" onclick="Fly(5.30,52.0, 8); SelectNew(1);"> 
 			<img class="ChapItemLogo" src="imgs/trafficlight.png">
 			<p class="ChapItemBtn" >Hoofdstuk 1</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(4.904,52.370); filterBy(4);">
+		<div class="ChapItem" id="Chap2" onclick="Fly(4.904,52.370); SelectNew(4);">
 			<img class="ChapItemLogo" src="imgs/truck.png">
 			<p class="ChapItemBtn" >Hoofdstuk 2</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(4.310,52.080); filterBy(7);">
+		<div class="ChapItem" id="Chap3" onclick="Fly(4.310,52.080); SelectNew(7);">
 			<img class="ChapItemLogo" src="imgs/polution.png">
 			<p class="ChapItemBtn" >Hoofdstuk 3</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(4.495,51.909); filterBy(16);">
+		<div class="ChapItem" id="Chap4" onclick="Fly(4.495,51.909); SelectNew(16);">
 			<img class="ChapItemLogo" src="imgs/truck.png">
 			<p class="ChapItemBtn">Hoofdstuk 4</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(5.120,52.067); filterBy(1);">
+		<div class="ChapItem" id="Chap5" onclick="Fly(5.120,52.067); SelectNew(1);">
 			<img class="ChapItemLogo" src="imgs/polution.png">
 			<p class="ChapItemBtn">Hoofdstuk 5</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(5.495,51.439); filterBy(7);">
+		<div class="ChapItem" id="Chap6" onclick="Fly(5.495,51.439); SelectNew(7);">
 			<img class="ChapItemLogo" src="imgs/trafficjam.png">
 			<p class="ChapItemBtn">Hoofdstuk 6</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(5.699,50.852); filterBy(1);">
+		<div class="ChapItem" id="Chap7" onclick="Fly(5.699,50.852); SelectNew(1);">
 			<img class="ChapItemLogo" src="imgs/trafficlight.png">
 			<p class="ChapItemBtn">Hoofdstuk 7</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(6.161,52.254); filterBy(7);">
+		<div class="ChapItem" id="Chap8" onclick="Fly(6.161,52.254); SelectNew(7);">
 			<img class="ChapItemLogo" src="imgs/truck.png">
 			<p class="ChapItemBtn">Hoofdstuk 8</p> 
 		</div>
-		<div class="ChapItem" onclick="Fly(6.570,53.208); filterBy(1);">
+		<div class="ChapItem" id="Chap9" onclick="Fly(6.570,53.208); SelectNew(1);">
 			<img class="ChapItemLogo" src="imgs/polution.png">
 			<p class="ChapItemBtn">Hoofdstuk 9</p> 
 		</div>
 	</div>
 
-
-	<div class="textbox" id="text1">
-		<h1>Hoofstuk een</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum. </p>
+	<!-- adding stories at right srcole carousel -->
+	<div class="stories">
+		<div class="story" id="Story1">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story2">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story3">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story4">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story5">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story6">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story7">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>
+		<div class="story" id="Story8">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>	
+		<div class="story" id="Story9">
+			<h1>Hoofdstuk 1</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>
+		</div>	
 	</div>
 
-	<!-- Time info box -->
-	<div class="hoverinfo">
-		<p id="hoverinfotest">Lorem ipsum dolor sit amet</p>
-	</div>
-
-  	<img class="logo" src="imgs/metroams.png">
-
-	<!-- Map -->
-	<div id="map"></div>
-
+	<!-- Run Script -->
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

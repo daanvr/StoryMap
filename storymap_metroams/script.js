@@ -16,56 +16,37 @@ var map = new mapboxgl.Map({
 });
 
 //Map controles Toggols
-map.addControl(new mapboxgl.NavigationControl());
-// map.scrollZoom.disable();
-// map.boxZoom.disable();
-// map.dragRotate.disable();
-// map.dragPan.disable();
-// map.keyboard.disable();
-// map.doubleClickZoom.disable();
-// map.touchZoomRotate.disable();
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'bottom-right');
 
+//initial Flight
 Fly(4.904,52.370, 9);
 
 
-//To be deleted when the new data arives
-map.on("load", function initiatefilter() {
-  //Initiate Filter
-  filterBy("" + 8 + "");
-  //NewSelection(64);
-  //add event listener to HTML range slider
-  document.getElementById('slider-start').addEventListener('input', function(e) {
-    //code to be executed when Slider is triggerd
-    var SliderValue = "" + parseInt(e.target.value, 10) + "" //create vare with range slider value
-    filterBy(SliderValue);  //trigger Fiter function adn send varibale with it.
-    //console.log(SliderValue);
-  });
-});
+SelectNew(3);
+//Select relevant storiues and chapters
+function SelectNew(Storynbr){
+  console.log("Selected Story number: " + Storynbr);
+  	var newchapter = "Chap" + Storynbr;
+  	var newstory = "Story" + Storynbr;
+  	console.log(newchapter, newstory);
+  	var NewChapterDOM = document.getElementById(newchapter);
+  	var NewStoryDOM = document.getElementById(newstory);
 
-// USed for time now, might be used for different chapters later
-function filterBy(SliderValue){
-  now = Number(SliderValue);
+  	//select correct Layers
 
-  var currenthour = "load" + SliderValue;
-  var TimeToDisplay = SliderValue + ":00";
+  	//Select corredt icone in Stpry List
+   	NewChapterDOM.classList.add("selected");
 
-  //loading, edditing, and setting style variable. this is where the style of 
-  //the map is queried to get the exact specifications and then the time used as 
-  //a variable to chose the width of style is changed and loded back in.
-  var propWidth= map.getPaintProperty("gsm-blau", "line-width");
-  //console.log(propWidth);  
-  propWidth[4][2][1] = currenthour;
-  propWidth[6][2][1] = currenthour;
-  propWidth[8][2][1] = currenthour;
-  map.setPaintProperty("gsm-blau", "line-width", propWidth);
+	//Select and navigate to correct Story in sidebare
+   	NewStoryDOM.classList.add("selected");
+   	NewStoryDOM.scrollIntoView();
+	//Tooltip layers to be selection
 
-  document.getElementById("TimeDisplay").textContent = TimeToDisplay;
 
-  console.log("Filtering");
-  console.log(currenthour);  
 };
 
-
+//Code snippet used to fly the camera to a different location
 function Fly(Long, Lat, Zoom) {
   if (Zoom == undefined) { Zoom = 11.9}
 
@@ -84,35 +65,14 @@ function Fly(Long, Lat, Zoom) {
   });
 };
 
-//These two functions are out off use right now. it doesn't work properly jet.
-function Play(OnOff) {
-  if (now < 23) {
-    newnow = now + 1;
-  } else { 
-    newnow = 3;
-  }
-  setTimeout(PNext(newnow), 1000);
-};
-
-function PNext(newnow) {
-    filterBy(newnow);
-    console.log("Current Play value: " + newnow);
-    Play(newnow);
-}
-
-//<button onclick="myVar = setTimeout(myFunction, 3000)">Try it</button>
-//<button onclick="clearTimeout(myVar)">Stop it</button>
-
-
-
-
+//Code snippet used to populate the infor box with data about the layer
 map.on('mousemove', function(e) {
   var data = map.queryRenderedFeatures(e.point, {
     layers: ['gsm-blau']
   });
 
-  if (data != undefined) {
-    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + data[1].properties.load6 + '</p><p>10:00: ' + data[1].properties.load10 + '</p><p>18:00: ' + data[1].properties.load18 + '</p><p>20:00: ' + data[1].properties.load20 + '</p><p>23:00: ' + data[1].properties.load23 + '</p>';
+  if (data[0].properties.load6 != undefined) {
+    document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + data[0].properties.load6 + '</p><p>10:00: ' + data[1].properties.load10 + '</p><p>18:00: ' + data[1].properties.load18 + '</p><p>20:00: ' + data[1].properties.load20 + '</p><p>23:00: ' + data[1].properties.load23 + '</p>';
   	console.log(data)
   } else {
     document.getElementById('hoverinfotest').innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p><p>Hover over data.</p>';

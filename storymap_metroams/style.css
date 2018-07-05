@@ -193,14 +193,14 @@ h3.hoverinfo {
 
 .story:hover {
 	background-color: rgb(235, 235, 235);
- 	max-height: unset;
+ 	max-height: none;
 
 }
 
 
 .story.selected {
  	background-color: #ddd;
- 	max-height: unset;
+ 	max-height: none;
 }
 
 .storyimg {

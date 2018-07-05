@@ -28,13 +28,13 @@ p {
  	margin: 10px;
  	/*background-color: white;*/
  	overflow: visible;
- 	width: 35px;
+	width: 0px;
 	z-index: 2;
     /*box-shadow: 0px 0px 8px 0px #888888;*/
  }
 
 .ChapItem.selected{
- 	background-color: #ddd;
+ 	background-color: rgb(190, 190, 255);
  	/*border-radius: 0px;
  	border-color: black;
  	border: solid;
@@ -48,16 +48,15 @@ p {
  	/*transition: 0.5s;*/
 	max-height: 35px;
 	float: right;
-	border-bottom: 2px solid #ddd;
  	background-color: white;
  	margin: 1px;
  	margin-top: 10px;
  	border-radius: 5px;
-
+ 	display: block;
 }
 
 .SubChapItem.selected{
- 	background-color: #ddd;
+ 	background-color: rgb(190, 190, 255);
  	/*border-radius: 0px;
  	border-color: black;
  	border: solid;
@@ -85,14 +84,27 @@ p {
 	width: max-content; 	/*max content does not animate*/
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
-	background-color: rgb(220, 220, 220);
+	cursor: pointer;
 }
 
 .ChapItem:hover {
 	width: max-content; 	/*max content does not animate*/
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
-	background-color: rgb(220, 220, 220);
+	cursor: pointer;
+}
+
+.ChapItem:hover > .ChapItemLogo {
+	float: right;
+}
+.ChapItem:hover > .ChapItemBtn {
+	float: left;
+}
+.SubChapItem:hover  > .ChapItemLogo {
+	float: right;
+}
+.SubChapItem:hover > .ChapItemBtn {
+	float: left;
 }
 
 .ChapItemLogo {
@@ -108,7 +120,7 @@ p {
 	font-size: 15px;
 	padding: 3px;
 	border-width: 0px;
-	background-color: unset;
+	/*background-color: unset;*/
 	float: right;
 	transform: translate(0px, -10px);
 /*	line-height: 35px;
@@ -180,26 +192,50 @@ h3.hoverinfo {
 	overflow-y: auto;
 }
 
-.story {
+.story, .substory {
 	min-height: 10px;
-    border-bottom: 1px solid #ddd;
 	background-color: white;
 	padding: 20px;
 	padding-top: 0px;
-	max-height: 30px;
 	overflow: hidden;
-	scroll-behavior:
+	/*transition: transform 0.2s ease-out;*/
 }
 
-.story:hover {
-	background-color: rgb(235, 235, 235);
- 	max-height: none;
+.story {
+	max-height: none;
+ 	background-color: rgba(0, 0, 255, 0.15);
+    border-top: 1px solid black;
+}
 
+.substory {
+	max-height: 30px;
+	padding-left: 35px;
+    border-top: 1px solid #ddd;
+}
+
+.story:hover, .substory:hover {
+	cursor: pointer;
+ 	/*max-height: none;*/
+}
+.story:hover {
+ 	background-color: rgba(0, 0, 255, 0.2);
+}
+.substory:hover {
+	background-color: rgb(235, 235, 235);
 }
 
 
 .story.selected {
- 	background-color: #ddd;
+ 	background-color: rgba(0, 0, 255, 0.2);
+}
+
+.substory.selected {
+ 	/*background-color: rgb(0, 0, 0, 0.05);*/
+ 	max-height: none;
+}
+
+.substory.selected:hover {
+ 	background-color: white;
  	max-height: none;
 }
 

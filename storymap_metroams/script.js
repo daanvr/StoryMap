@@ -154,12 +154,8 @@ function Build(){
 	   	iplusplus++;
 	   	var ChapListItem = document.createElement("div");
        	ChapListItem.id = "Chap" + iplusplus; 
-       	if (chapters[i].level == 0) {
-       		ChapListItem.className = "ChapItem";
-       	} else {
-       		ChapListItem.className = "SubChapItem";
-       	}
-
+       	if (chapters[i].level == 0) {ChapListItem.className = "ChapItem";
+        } else {ChapListItem.className = "SubChapItem";}
        	ChapListItem.innerHTML = '<img class="ChapItemLogo" src="' + chapters[i].iconsrc + '"><p class="ChapItemBtn" >' + chapters[i].title + '</p>';
        	ChapListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
           	var currentI = i;
@@ -171,7 +167,9 @@ function Build(){
 	   	//Building stories to the right side
 		var StoryListItem = document.createElement("div");
         StoryListItem.id = "Story" + iplusplus; 
-        StoryListItem.className = "story";
+       	if (chapters[i].level == 0) {StoryListItem.className = "story";
+        } else {StoryListItem.className = "substory";}
+        
         StoryListItem.innerHTML = '<h1>' + chapters[i].title + '</h1>' + chapters[i].htmlbody;
         StoryListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
           	var currentI = i;

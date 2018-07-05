@@ -30,79 +30,118 @@ chapters[0] = {
     location: [5.30,52.0, 8],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/trafficlight.png"
+    iconsrc: "imgs/trafficlight.png",
+    level: "0"
 };
 chapters[1] = {
     chapnbr:2,
-    title:"Hoofdstuk 2",
+    title:"Subhoofdstuk 1",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.30,52.0, 11],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/truck.png"
+    iconsrc: "imgs/truck.png",
+    level: "1"
 };
 chapters[2] = {
     chapnbr:3,
-    title:"Hoofdstuk 3",
+    title:"Subhoofdstuk 2",
     htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
     location: [4.310,52.080],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/polution.png"
+    iconsrc: "imgs/polution.png",
+    level: "1"
 };
 chapters[3] = {
     chapnbr:4,
-    title:"Hoofdstuk 4",
+    title:"Subhoofdstuk 3",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [4.495,51.909],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/truck.png"
+    iconsrc: "imgs/truck.png",
+    level: "1"
 };
 chapters[4] = {
     chapnbr:5,
-    title:"Hoofdstuk 5",
+    title:"Hoofdstuk 2",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.120,52.067],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/polution.png"
+    iconsrc: "imgs/polution.png",
+    level: "0"
 };
 chapters[5] = {
     chapnbr:6,
-    title:"Hoofdstuk 6",
+    title:"Subhoofdstuk 1",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.495,51.439],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/trafficjam.png"
+    iconsrc: "imgs/trafficjam.png",
+    level: "1"
 };
 chapters[6] = {
     chapnbr:7,
-    title:"Hoofdstuk 7",
+    title:"Subhoofdstuk 2",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.699,50.852],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/trafficlight.png"
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
 };
 chapters[7] = {
     chapnbr:8,
-    title:"Hoofdstuk 8",
+    title:"Subhoofdstuk 3",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [6.161,52.254],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/truck.png"
+    iconsrc: "imgs/truck.png",
+    level: "1"
 };
 chapters[8] = {
     chapnbr:9,
-    title:"Hoofdstuk 9",
+    title:"Hoofdstuk 3",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [6.570,53.208],
     maplayers: "",
     UIToggles: "",
-    iconsrc: "imgs/polution.png"
+    iconsrc: "imgs/polution.png",
+    level: "0"
+};
+chapters[9] = {
+    chapnbr:10,
+    title:"Subhoofdstuk 1",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
+    location: [5.699,50.852],
+    maplayers: "",
+    UIToggles: "",
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
+chapters[10] = {
+    chapnbr:11,
+    title:"Subhoofdstuk 2",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
+    location: [6.161,52.254],
+    maplayers: "",
+    UIToggles: "",
+    iconsrc: "imgs/truck.png",
+    level: "1"
+};
+chapters[11] = {
+    chapnbr:12,
+    title:"Subhoofdstuk 3",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
+    location: [6.570,53.208],
+    maplayers: "",
+    UIToggles: "",
+    iconsrc: "imgs/truck.png",
+    level: "1"
 };
 console.log(chapters);
 
@@ -115,7 +154,12 @@ function Build(){
 	   	iplusplus++;
 	   	var ChapListItem = document.createElement("div");
        	ChapListItem.id = "Chap" + iplusplus; 
-       	ChapListItem.className = "ChapItem";
+       	if (chapters[i].level == 0) {
+       		ChapListItem.className = "ChapItem";
+       	} else {
+       		ChapListItem.className = "SubChapItem";
+       	}
+
        	ChapListItem.innerHTML = '<img class="ChapItemLogo" src="' + chapters[i].iconsrc + '"><p class="ChapItemBtn" >' + chapters[i].title + '</p>';
        	ChapListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
           	var currentI = i;

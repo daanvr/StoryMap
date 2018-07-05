@@ -26,40 +26,72 @@ p {
 	right: calc(33vw);
  	position: absolute;
  	margin: 10px;
- 	border-radius: 5px;
- 	background-color: white;
+ 	/*background-color: white;*/
  	overflow: visible;
  	width: 35px;
 	z-index: 2;
-    box-shadow: 0px 0px 8px 0px #888888;
+    /*box-shadow: 0px 0px 8px 0px #888888;*/
  }
 
- .ChapItem.selected{
+.ChapItem.selected{
  	background-color: #ddd;
- 	border-radius: 0px;
+ 	/*border-radius: 0px;
+ 	border-color: black;
+ 	border: solid;
+ 	border-width: 1px;
+ 	*/width: 35px;
  }
-
-.ChapList:hover {
-}
 
 .ChapItem {
  	width: 35px;
  	overflow: hidden;
  	/*transition: 0.5s;*/
- 	border-radius: 5px;
- 	border-width: 2px;
- 	border-color: green;
 	max-height: 35px;
 	float: right;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 2px solid #ddd;
+ 	background-color: white;
+ 	margin: 1px;
+ 	margin-top: 10px;
+ 	border-radius: 5px;
 
+}
 
+.SubChapItem.selected{
+ 	background-color: #ddd;
+ 	/*border-radius: 0px;
+ 	border-color: black;
+ 	border: solid;
+ 	border-width: 1px;
+ 	*/width: 35px;
 
+ }
+
+.SubChapItem {
+ 	width: 35px;
+ 	overflow: hidden;
+ 	/*transition: 0.5s;*/
+	max-height: 35px;
+	float: right;
+	/*border-bottom: 1px solid #ddd;*/
+	/*background-color: #ddd;*/
+	/*opacity: 0.5;*/
+ 	background-color: white;
+ 	margin: 1px;
+ 	border-radius: 5px;
+
+}
+
+.SubChapItem:hover {
+	width: max-content; 	/*max content does not animate*/
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: rgb(220, 220, 220);
 }
 
 .ChapItem:hover {
 	width: max-content; 	/*max content does not animate*/
-	border-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	background-color: rgb(220, 220, 220);
 }
 
@@ -153,10 +185,22 @@ h3.hoverinfo {
     border-bottom: 1px solid #ddd;
 	background-color: white;
 	padding: 20px;
+	padding-top: 0px;
+	max-height: 30px;
+	overflow: hidden;
+	scroll-behavior:
 }
+
+.story:hover {
+	background-color: rgb(235, 235, 235);
+ 	max-height: unset;
+
+}
+
 
 .story.selected {
  	background-color: #ddd;
+ 	max-height: unset;
 }
 
 .storyimg {

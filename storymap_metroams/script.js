@@ -35,7 +35,7 @@ chapters[0] = {
 };
 chapters[1] = {
     chapnbr:2,
-    title:"Subhoofdstuk 1",
+    title:"1 Subhoofdstuk",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.30,52.0, 11],
     maplayers: "",
@@ -45,7 +45,7 @@ chapters[1] = {
 };
 chapters[2] = {
     chapnbr:3,
-    title:"Subhoofdstuk 2",
+    title:"2 Subhoofdstuk",
     htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
     location: [4.310,52.080],
     maplayers: "",
@@ -55,7 +55,7 @@ chapters[2] = {
 };
 chapters[3] = {
     chapnbr:4,
-    title:"Subhoofdstuk 3",
+    title:"3 Subhoofdstuk",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [4.495,51.909],
     maplayers: "",

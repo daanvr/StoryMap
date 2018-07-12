@@ -149,36 +149,60 @@ console.log(chapters);
 Build();
 function Build(){
 	for (var i in chapters) {
-	    //Building menu
 	   	var iplusplus = i;
 	   	iplusplus++;
-	   	var ChapListItem = document.createElement("div");
-       	ChapListItem.id = "Chap" + iplusplus; 
-       	if (chapters[i].level == 0) {ChapListItem.className = "ChapItem";
-        } else {ChapListItem.className = "SubChapItem";}
-       	ChapListItem.innerHTML = '<img class="ChapItemLogo" src="' + chapters[i].iconsrc + '"><p class="ChapItemBtn" >' + chapters[i].title + '</p>';
-       	ChapListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
-          	var currentI = i;
-          	currentI++
-          	return function() {ChapSelect(currentI + '');}})();
-       	document.getElementById('ChapList').appendChild(ChapListItem);
-	   	console.log("Menu div: " + i + "/" + chapters.length);
 
-	   	//Building stories to the right side
-		var StoryListItem = document.createElement("div");
-        StoryListItem.id = "Story" + iplusplus; 
-       	if (chapters[i].level == 0) {StoryListItem.className = "story";
-        } else {StoryListItem.className = "substory";}
-        
-        StoryListItem.innerHTML = '<h1>' + chapters[i].title + '</h1>' + chapters[i].htmlbody;
-        StoryListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
-          	var currentI = i;
-          	currentI++
-          	return function() {ChapSelect(currentI + '');}})();
-        document.getElementById('stories').appendChild(StoryListItem);
-	    console.log("Story div: " + i + "/" + chapters.length);
+	   	var LastChap;
+	   	if (chapters[i].level == 0) { LastChap = "Chap" + iplusplus;}
+
+	   	BuildChapList (i, iplusplus, LastChap);
+	   	BuildStoryList (i, iplusplus, LastChap);
 	} 
 };
+
+function BuildChapList (i, iplusplus, LastChap) {
+   	var ChapListItem = document.createElement("div");
+   	ChapListItem.id = "Chap" + iplusplus; 
+   	if (chapters[i].level == 0) {ChapListItem.className = "ChapItem";
+    } else {
+    	ChapListItem.className = "SubChapItem";
+       	ChapListItem.innerHTML = '<img class="ChapItemLogo" src="' + chapters[i].iconsrc + '"><p class="ChapItemBtn" >' + chapters[i].title + '</p>';
+    }
+   	ChapListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
+      	var currentI = i;
+      	currentI++
+      	return function() {ChapSelect(currentI + '');}})();
+   	if (chapters[i].level == 0) {
+   		document.getElementById('ChapList').appendChild(ChapListItem);
+   		console.log("Menu div MegaCahp: " + i + "/" + chapters.length);
+   	} else {
+   		document.getElementById(LastChap).appendChild(ChapListItem);
+   		console.log("Menu div InfChap: " + i + "/" + chapters.length);
+   	}
+};
+
+function BuildStoryList (i, iplusplus, LastChap) {
+	var StoryListItem = document.createElement("div");
+    StoryListItem.id = "Story" + iplusplus; 
+   	if (chapters[i].level == 0) {StoryListItem.className = "story";
+    } else {StoryListItem.className = "substory";}
+    StoryListItem.innerHTML = '<h1>' + chapters[i].title + '</h1>' + chapters[i].htmlbody;
+    StoryListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
+      	var currentI = i;
+      	currentI++
+      	return function() {ChapSelect(currentI + '');}})();
+    if (chapters[i].level == 0) {
+    	var Container = document.createElement("div");
+   		Container.id = "StoryContainer" + LastChap;
+   		Container.className = "StoryContainer " + LastChap;
+   		document.getElementById('stories').appendChild(Container);
+   		document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
+    } else {
+    	document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
+    }
+    console.log("Story div: " + i + "/" + chapters.length);
+};
+
 
 
 ChapSelect(1);

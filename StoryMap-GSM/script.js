@@ -17,6 +17,7 @@ var map = new mapboxgl.Map({
 
 //Map controles Toggols
 map.addControl(new mapboxgl.NavigationControl());
+//map.addControl(new mapboxgl.FullscreenControl());
 //map.scrollZoom.disable();
 // map.boxZoom.disable();
 // map.dragRotate.disable();
@@ -88,6 +89,62 @@ function Fly(Long, Lat, Zoom) {
   });
 };
 
+
+function Keybord(event) {
+  var x = event.which || event.keyCode;
+  console.log(x);
+  if (x == 110) {Fly(5.30,52.0, 8);}
+  if (x == 97) {Fly(4.904,52.370);}
+  if (x == 116) {Fly(4.310,52.080);}
+  if (x == 114) {Fly(4.495,51.909);}
+  if (x == 117) {Fly(4.495,51.909);}
+  if (x == 101) {Fly(5.495,51.439);}
+  if (x == 109) {Fly(5.699,50.852);}
+  if (x == 100) {Fly(6.161,52.254);}
+  if (x == 103) {Fly(6.570,53.208);}
+  if (x == 49) {filterBy(1);}
+  if (x == 50) {filterBy(2);}
+  if (x == 51) {filterBy(3);}
+  if (x == 52) {filterBy(4);}
+  if (x == 53) {filterBy(5);}
+  if (x == 54) {filterBy(6);}
+  if (x == 55) {filterBy(7);}
+  if (x == 56) {filterBy(8);}
+  if (x == 57) {filterBy(9);}
+  if (x == 33) {filterBy(10);}
+  if (x == 64) {filterBy(11);}
+  if (x == 35) {filterBy(12);}
+  if (x == 36) {filterBy(13);}
+  if (x == 37) {filterBy(14);}
+  if (x == 94) {filterBy(15);}
+  if (x == 38) {filterBy(16);}
+  if (x == 42) {filterBy(17);}
+  if (x == 40) {filterBy(18);}
+  if (x == 81) {filterBy(19);}
+  if (x == 87) {filterBy(20);}
+  if (x == 69) {filterBy(21);}
+  if (x == 82) {filterBy(22);}
+  if (x == 84) {filterBy(23);}
+  if (x == 89) {filterBy(24);}
+
+
+
+
+// Fly(5.30,52.0, 8);Nederland
+// Fly(4.904,52.370);Amsterdam
+// Fly(4.310,52.080);Den Haag
+// Fly(4.495,51.909);Rotterdam
+// Fly(5.120,52.067);Utrecht
+// Fly(5.495,51.439);Eindhoven
+// Fly(5.699,50.852);Maastricht
+// Fly(6.161,52.254);Deventer
+// Fly(6.570,53.208);Groningen
+};
+
+
+
+
+
 //These two functions are out off use right now. it doesn't work properly jet.
 function Play(OnOff) {
   if (now < 23) {
@@ -102,7 +159,7 @@ function PNext(newnow) {
     filterBy(newnow);
     console.log("Current Play value: " + newnow);
     Play(newnow);
-}
+};
 
 //<button onclick="myVar = setTimeout(myFunction, 3000)">Try it</button>
 //<button onclick="clearTimeout(myVar)">Stop it</button>

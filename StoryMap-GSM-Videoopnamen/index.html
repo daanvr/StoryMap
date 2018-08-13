@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<!-- Location menu -->
+	<div class="Menu">
+		<button class="btn" onclick="Fly(5.3,52.0, 8);">Nederland</button>
+		<button class="btn" onclick="Fly(4.904,52.370);">Amsterdam</button>
+		<button class="btn" onclick="Fly(4.310,52.080);">Den Haag</button>
+		<button class="btn" onclick="Fly(4.495,51.909);">Rotterdam</button>
+		<button class="btn" onclick="Fly(5.120,52.067);">Utrecht</button>
+		<button class="btn" onclick="Fly(5.495,51.439);">Eindhoven</button>
+		<button class="btn" onclick="Fly(5.699,50.852);">Maastricht</button>
+		<button class="btn" onclick="Fly(6.161,52.254);">Deventer</button>
+		<button class="btn" onclick="Fly(6.570,53.208);">Groningen</button>
+		<!-- <button class="btn" onclick="Play();">Play</button> -->
+	</div>
+
+	<!-- Time info box -->
+	<div class="TimeDiv" onkeypress="Keybord(event)" onclick="">
+		<p id="TimeDisplay" onkeypress="Keybord(event)" onclick="">8:00</p>
+	</div>
+
+	<!-- Time Slider -->
+	<div class='map-overlay-yearsliderbox' id='yearsliderbox'>  
+    	<input  id='slider-start' class='slider' type='range' min='0' max='23' step='1' value='8' onkeypress="Keybord(event)"/>
+  	</div>
+	
+  	<img class="logo" src="dat-logo-mobility-wit.png">
+
+	<!-- Map -->
+	<div id="map"></div>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

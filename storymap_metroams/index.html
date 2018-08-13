@@ -15,11 +15,11 @@
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'/>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 
-<button onclick='test();'>Opt-Out</button>
 
 	<!-- Map -->
 	<div id="map">
@@ -38,5 +38,9 @@
 	<!-- Run Script -->
 	<script type="text/javascript" src="script.js"></script>
 	
+	<!-- Coockie notice -->
+	<div id="snackbar">We maken gebruk van cookies en analitics.<a onclick='test();'>Opt-Out</a> <button onclick='test();'>ok</button>
+</div>
+
 </body>
 </html>

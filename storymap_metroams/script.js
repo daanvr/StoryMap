@@ -303,3 +303,27 @@ function test() {
   window["ga-disable-UA-123842593-1"] = true; 
   console.log("opting out")
 };
+
+
+// map.on('load', function () {
+//   Cookies();
+// });
+
+
+
+function Cookies(bool) {
+    //testing if the function is called
+    console.log("cookie call")
+
+    if (bool == 1) {
+
+    }
+    // Get the snackbar DIV
+    var cookie = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    cookie.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    // setTimeout(function(){ cookie.className = cookie.className.replace("show", ""); }, 3000);
+}

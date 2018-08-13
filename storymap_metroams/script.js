@@ -224,7 +224,7 @@ function ChapSelect(nbr) {
 
 //Select relevant storiues and chapters
 function UISelectionFeedback(Storynbr){
-  	console.log("Selected Story number: " + Storynbr);
+  	console.log("UI: Selected Story number: " + Storynbr);
   	var newchapter = "Chap" + Storynbr;
   	var newstory = "Story" + Storynbr;
   	console.log(newchapter, newstory);
@@ -299,3 +299,7 @@ map.on('mouseleave', 'gsm-blau', function() {
     popup.remove();//hide popup
 });
 
+function test() {
+  window["ga-disable-UA-123842593-1"] = true; 
+  console.log("opting out")
+};

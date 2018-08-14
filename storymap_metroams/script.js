@@ -2,22 +2,32 @@ var chapters = new Array();
 
 //Mapbox initalisation
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFhbnZyIiwiYSI6ImNpdTJmczN3djAwMHEyeXBpNGVndWtuYXEifQ.GYZf7r9gTfQL3W-GpmmJ3A';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/daanvr/cji4ar5op00j42rldukleb8lt',
-    duration: 6000,
-    center: [5.299,52.382],
-    zoom: 9,
-    pitch: 0,
-    minZoom: 8
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/daanvr/cjksey1ck00d22rn3nnfkt77j',
+center: [5.385754, 52.114371],
+zoom: 7.3
 });
+
+
+
+// mapboxgl.accessToken = 'pk.eyJ1IjoiZGFhbnZyIiwiYSI6ImNpdTJmczN3djAwMHEyeXBpNGVndWtuYXEifQ.GYZf7r9gTfQL3W-GpmmJ3A';
+// var map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/daanvr/cji4ar5op00j42rldukleb8lt',
+//     duration: 6000,
+//     center: [5.299,52.382],
+//     zoom: 9,
+//     pitch: 0,
+//     minZoom: 8
+// });
 
 //Map controles Toggols
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
 //initial Flight
-Fly(4.904,52.370, 9);
+Fly(5.0,52.397, 9.5);
 
 //set language to NL
 //map.setLayoutProperty('country-label-lg', 'text-field', ['get', 'name_' + language]);
@@ -25,9 +35,9 @@ Fly(4.904,52.370, 9);
 //"hardcoded" data for now 
 chapters[0] = {
     chapnbr:1,
-    title:"Hoofdstuk 1",
+    title:"Verkeer",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.30,52.0, 8],
+    location: [5.0,52.397, 9.5],
     maplayers: "",
     UIToggles: "",
     iconsrc: "imgs/trafficlight.png",
@@ -35,10 +45,10 @@ chapters[0] = {
 };
 chapters[1] = {
     chapnbr:2,
-    title:"1 Subhoofdstuk",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.30,52.0, 11],
-    maplayers: "",
+    title:"Licht- en zwaar vrachtverkeer",
+    htmlbody:"<p>Nu zit u de intensiteit van het vrachtverkeer op een doorsnee dag. Des te warmer de kleur is des te meer licht en zwaar vrachtverkeer er rijd.</p>",
+    location: [5.0,52.397, 9.5],
+    maplayers: "Vrachtverkeer",
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
@@ -47,7 +57,7 @@ chapters[2] = {
     chapnbr:3,
     title:"2 Subhoofdstuk",
     htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
-    location: [4.310,52.080],
+    location: "",
     maplayers: "",
     UIToggles: "",
     iconsrc: "imgs/polution.png",
@@ -57,7 +67,7 @@ chapters[3] = {
     chapnbr:4,
     title:"3 Subhoofdstuk",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [4.495,51.909],
+    location: "",
     maplayers: "",
     UIToggles: "",
     iconsrc: "imgs/truck.png",
@@ -167,11 +177,12 @@ function BuildChapList (i, iplusplus, LastChap) {
     } else {
     	ChapListItem.className = "SubChapItem";
        	ChapListItem.innerHTML = '<img class="ChapItemLogo" src="' + chapters[i].iconsrc + '"><p class="ChapItemBtn" >' + chapters[i].title + '</p>';
+        ChapListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
+        var currentI = i;
+        currentI++
+        return function() {ChapSelect(currentI + '');}})();
+
     }
-   	ChapListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
-      	var currentI = i;
-      	currentI++
-      	return function() {ChapSelect(currentI + '');}})();
    	if (chapters[i].level == 0) {
    		document.getElementById('ChapList').appendChild(ChapListItem);
    		console.log("Menu div MegaCahp: " + i + "/" + chapters.length);
@@ -205,17 +216,21 @@ function BuildStoryList (i, iplusplus, LastChap) {
 
 
 
-ChapSelect(1);
+//ChapSelect(1);
 function ChapSelect(nbr) {
 	nbr--;
 	console.log("Chapter: " + nbr);
 
 	//fly to
-	Fly(chapters[nbr].location[0], chapters[nbr].location[1], chapters[nbr].location[2]);
+	if (chapters[nbr].location[0] != undefined) {
+      Fly(chapters[nbr].location[0], chapters[nbr].location[1], chapters[nbr].location[2]);
+  }
 
 	//UI Selection feedback
 	UISelectionFeedback(chapters[nbr].chapnbr)
+
 	//Filter map data
+  LayerFilter(chapters[nbr].maplayers)
 
 	//Toggle UI elements
 
@@ -253,6 +268,7 @@ function UISelectionFeedback(Storynbr){
 //Code snippet used to fly the camera to a different location
 function Fly(Long, Lat, Zoom) {
   if (Zoom == undefined) { Zoom = 11.9}
+    console.log(Zoom);
   map.flyTo({
     center: [Long,Lat],
     zoom: Zoom,
@@ -299,31 +315,29 @@ map.on('mouseleave', 'gsm-blau', function() {
     popup.remove();//hide popup
 });
 
-function test() {
-  window["ga-disable-UA-123842593-1"] = true; 
-  console.log("opting out")
-};
-
-
-// map.on('load', function () {
-//   Cookies();
-// });
-
-
-
-function Cookies(bool) {
-    //testing if the function is called
-    console.log("cookie call")
-
-    if (bool == 1) {
-
+var LastActivatedLayers;
+function LayerFilter(Layer) {
+    if (LastActivatedLayers != undefined) {
+        if (LastActivatedLayers == "Vrachtverkeer") {
+            map.setLayoutProperty("intensiteiten-hwn copy 11", 'visibility', 'none');
+            map.setLayoutProperty("intensiteiten-hwn copy 12", 'visibility', 'none');
+            map.setLayoutProperty("intensiteiten-hwn copy 13", 'visibility', 'none');
+            map.setLayoutProperty("intensiteiten-hwn copy 14", 'visibility', 'none');
+            map.setLayoutProperty("intensiteiten-hwn copy 15", 'visibility', 'none');
+            console.log("Layer: vrachtverkeer uit");
+            LastActivatedLayers = "";
+        }
     }
-    // Get the snackbar DIV
-    var cookie = document.getElementById("snackbar");
+    if (Layer == "Vrachtverkeer") {
+        map.setLayoutProperty("intensiteiten-hwn copy 11", 'visibility', 'visible');
+        map.setLayoutProperty("intensiteiten-hwn copy 12", 'visibility', 'visible');
+        map.setLayoutProperty("intensiteiten-hwn copy 13", 'visibility', 'visible');
+        map.setLayoutProperty("intensiteiten-hwn copy 14", 'visibility', 'visible');
+        map.setLayoutProperty("intensiteiten-hwn copy 15", 'visibility', 'visible');
+        console.log("Layer: vrachtverkeer aan");
+        LastActivatedLayers = "Vrachtverkeer";
+        console.log(LastActivatedLayers);
+    }  
 
-    // Add the "show" class to DIV
-    cookie.className = "show";
 
-    // After 3 seconds, remove the show class from DIV
-    // setTimeout(function(){ cookie.className = cookie.className.replace("show", ""); }, 3000);
-}
+};

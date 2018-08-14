@@ -9,7 +9,7 @@
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 
-		  gtag('config', 'UA-123842593-1');
+		  gtag('config', 'UA-123842593-1', { 'anonymize_ip': true });
 	</script>
 
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
@@ -27,19 +27,19 @@
 		<!-- Time info box -->
 		<div class="hoverinfo" id="hoverinfobox"></div>
 
+		<!-- Chapters in menu -->
+		<div class="ChapList" id="ChapList"></div>
+
+		<!-- stories in right srcole carousel -->
+		<div class="stories" id="stories"></div>
+
 	</div>
 
-	<!-- Chapters in menu -->
-	<div class="ChapList" id="ChapList"></div>
 
-	<!-- stories in right srcole carousel -->
-	<div class="stories" id="stories"></div>
 
 	<!-- Run Script -->
 	<script type="text/javascript" src="script.js"></script>
 	
-	<!-- Coockie notice -->
-	<div id="snackbar">We maken gebruk van cookies en analitics.<a onclick='test();'>Opt-Out</a> <button onclick='test();'>ok</button>
 </div>
 
 </body>

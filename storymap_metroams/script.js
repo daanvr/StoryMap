@@ -1,5 +1,5 @@
 var chapters = new Array();
-
+var LegendaUI = document.getElementById('Legenda');
 //Mapbox initalisation
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFhbnZyIiwiYSI6ImNpdTJmczN3djAwMHEyeXBpNGVndWtuYXEifQ.GYZf7r9gTfQL3W-GpmmJ3A';
 const map = new mapboxgl.Map({
@@ -39,6 +39,7 @@ chapters[0] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.0,52.397, 9.5],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/trafficlight.png",
     level: "0"
@@ -49,6 +50,7 @@ chapters[1] = {
     htmlbody:"<p>Nu zit u de intensiteit van het vrachtverkeer op een doorsnee dag. Des te warmer de kleur is des te meer licht en zwaar vrachtverkeer er rijd.</p>",
     location: [5.0,52.397, 9.5],
     maplayers: "Vrachtverkeer",
+    AllLayers: ["intensiteiten-hwn copy 11", "intensiteiten-hwn copy 12", "intensiteiten-hwn copy 13", "intensiteiten-hwn copy 14", "intensiteiten-hwn copy 15"],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
@@ -59,6 +61,7 @@ chapters[2] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
     location: "",
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/polution.png",
     level: "1"
@@ -69,16 +72,18 @@ chapters[3] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: "",
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
 };
 chapters[4] = {
     chapnbr:5,
-    title:"Hoofdstuk 2",
+    title:"Openbaar Vervoer",
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.120,52.067],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/polution.png",
     level: "0"
@@ -89,6 +94,7 @@ chapters[5] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.495,51.439],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/trafficjam.png",
     level: "1"
@@ -99,6 +105,7 @@ chapters[6] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.699,50.852],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/trafficlight.png",
     level: "1"
@@ -109,6 +116,7 @@ chapters[7] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [6.161,52.254],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
@@ -119,6 +127,7 @@ chapters[8] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [6.570,53.208],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/polution.png",
     level: "0"
@@ -129,6 +138,7 @@ chapters[9] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [5.699,50.852],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/trafficlight.png",
     level: "1"
@@ -139,6 +149,7 @@ chapters[10] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [6.161,52.254],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
@@ -149,6 +160,7 @@ chapters[11] = {
     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
     location: [6.570,53.208],
     maplayers: "",
+    AllLayers: [],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
@@ -219,7 +231,6 @@ function BuildStoryList (i, iplusplus, LastChap) {
 //ChapSelect(1);
 function ChapSelect(nbr) {
 	nbr--;
-	console.log("Chapter: " + nbr);
 
 	//fly to
 	if (chapters[nbr].location[0] != undefined) {
@@ -230,7 +241,7 @@ function ChapSelect(nbr) {
 	UISelectionFeedback(chapters[nbr].chapnbr)
 
 	//Filter map data
-  LayerFilter(chapters[nbr].maplayers)
+  LayerFilter(chapters[nbr])
 
 	//Toggle UI elements
 
@@ -239,10 +250,8 @@ function ChapSelect(nbr) {
 
 //Select relevant storiues and chapters
 function UISelectionFeedback(Storynbr){
-  	console.log("UI: Selected Story number: " + Storynbr);
   	var newchapter = "Chap" + Storynbr;
   	var newstory = "Story" + Storynbr;
-  	console.log(newchapter, newstory);
   	var NewChapterDOM = document.getElementById(newchapter);
   	var NewStoryDOM = document.getElementById(newstory);
 
@@ -290,24 +299,8 @@ var popup = new mapboxgl.Popup({
     closeButton: false
 });
 
-//var with DOM inside for easy acces
-var hoverinfobox = document.getElementById('hoverinfobox')
 
 
-map.on('mousemove','gsm-blau' , function(e) {//Code snippet used to populate the infor box with data about the layer
-  	map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
-  	var HoverdData = e.features[0];// Single out the first found feature.
-  	hoverinfobox.innerHTML = '';//remove exiting html from top left infobox
-  	
-  	//populting the top left infobox
-  	hoverinfobox.innerHTML = '<h3><strong>' + "Data" + '</strong></h3><p>6:00: ' + HoverdData.properties.load6 + '</p>10:00: ' + HoverdData.properties.load10 + '</p><p>18:00: ' + HoverdData.properties.load18 + '</p><p>20:00: ' + HoverdData.properties.load20 + '</p><p>23:00: ' + HoverdData.properties.load23 + '</p>';
-  	hoverinfobox.style.display = 'block';//unhide popup
- 	popup.setLngLat(e.lngLat)// Display a popup with the name of the county
-      .setText(
-      	"Aantal voertuigen om 6uur: " + HoverdData.properties.load6
-      	)
-      .addTo(map);
-});
 
 map.on('mouseleave', 'gsm-blau', function() {
     map.getCanvas().style.cursor = '';//reove "specil" cursor style
@@ -316,28 +309,141 @@ map.on('mouseleave', 'gsm-blau', function() {
 });
 
 var LastActivatedLayers;
-function LayerFilter(Layer) {
-    if (LastActivatedLayers != undefined) {
-        if (LastActivatedLayers == "Vrachtverkeer") {
-            map.setLayoutProperty("intensiteiten-hwn copy 11", 'visibility', 'none');
-            map.setLayoutProperty("intensiteiten-hwn copy 12", 'visibility', 'none');
-            map.setLayoutProperty("intensiteiten-hwn copy 13", 'visibility', 'none');
-            map.setLayoutProperty("intensiteiten-hwn copy 14", 'visibility', 'none');
-            map.setLayoutProperty("intensiteiten-hwn copy 15", 'visibility', 'none');
-            console.log("Layer: vrachtverkeer uit");
-            LastActivatedLayers = "";
+
+function LayerFilter(Chap) {
+    //console.log(chapters[Chap.chapnbr].AllLayers[0]);  //doet het wel
+    //console.log(Chap.AllLayers[0]);                    // doet het niet, warrom?
+    
+    //creating nessery human an non array numbering
+    var chapnbrpp = Chap.chapnbr; // THis is a human nbr starting from 1
+    chapnbrpp--; // This is an array nbr starting from 0
+
+    //uitschakelen van de laast ingeschakelde layers
+    if (LastActivatedLayers != undefined) { // is er een vormalige selectie
+        for (var i in chapters[LastActivatedLayers].AllLayers) {  //zo vaak uitvoeren als dat er layers zijn
+            map.setLayoutProperty(chapters[LastActivatedLayers].AllLayers[i], 'visibility', 'none');  //zet de layer met de specifique naam uit
+            console.log("Layer " + LastActivatedLayersHumannbr + "." + i +" uit");  // Laat weten dat het uitzetten gelukt is.
         }
     }
-    if (Layer == "Vrachtverkeer") {
-        map.setLayoutProperty("intensiteiten-hwn copy 11", 'visibility', 'visible');
-        map.setLayoutProperty("intensiteiten-hwn copy 12", 'visibility', 'visible');
-        map.setLayoutProperty("intensiteiten-hwn copy 13", 'visibility', 'visible');
-        map.setLayoutProperty("intensiteiten-hwn copy 14", 'visibility', 'visible');
-        map.setLayoutProperty("intensiteiten-hwn copy 15", 'visibility', 'visible');
-        console.log("Layer: vrachtverkeer aan");
-        LastActivatedLayers = "Vrachtverkeer";
-        console.log(LastActivatedLayers);
-    }  
+
+    //leeg maken van Legenda
+    LegendaUI.innerHTML = "";
+
+    //ale layer in de nieuwe selectie gaat aan
+    for (var i in chapters[chapnbrpp].AllLayers) {
+        map.setLayoutProperty(chapters[chapnbrpp].AllLayers[i], 'visibility', 'visible');  //zet de layer met de specifique naam aan
+        console.log("Layer " + Chap.chapnbr + "." + i +" aan");  // Laat weten dat het uitzetten gelukt is.
+    }
+
+    if (Chap.chapnbr == 2) {
+       
+        //Legenda selectie
+        var a = "<div class='color' style='background-color: "
+        var b = ";'>"
+        var c = "</div>"
+
+        //inserting variables in Legenda
+        LegendaUI.innerHTML = 
+        a + "white" + b + "< 2500" + c + 
+        a + "yellow" + b + "< 5000" + c + 
+        a + "orange" + b + "< 7500" + c + 
+        a + "red" + b + "< 10000" + c + 
+        a + "brown" + b + "> 10000" + c;
+
+        //Popup data om te vullen
+        map.on('mousemove','intensiteiten-hwn copy 11' , function(e) {
+            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+            var HoverdData = e.features[0];// Single out the first found feature.
+                
+            // Display a popup with the data
+            popup.setLngLat(e.lngLat)
+                 .setText(HoverdData)
+                 .addTo(map);
+
+            //test
+            console.log(HoverdData);
+        });
+        map.on('mouseleave', 'intensiteiten-hwn copy 11', function() {
+            map.getCanvas().style.cursor = '';//reove "specil" cursor style
+            popup.remove();//hide popup
+        });
 
 
+        map.on('mousemove','intensiteiten-hwn copy 12' , function(e) {
+            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+            var HoverdData = e.features[0];// Single out the first found feature.
+                
+            // Display a popup with the name of the county
+            popup.setLngLat(e.lngLat)
+                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
+                 .addTo(map);
+
+            //test
+            console.log(HoverdData);
+        });
+        map.on('mouseleave', 'intensiteiten-hwn copy 12', function() {
+            map.getCanvas().style.cursor = '';//reove "specil" cursor style
+            popup.remove();//hide popup
+        });
+        map.on('mousemove','intensiteiten-hwn copy 13' , function(e) {
+            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+            var HoverdData = e.features[0];// Single out the first found feature.
+                
+            // Display a popup with the name of the county
+            popup.setLngLat(e.lngLat)
+                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
+                 .addTo(map);
+
+            //test
+            console.log(HoverdData);
+        });
+        map.on('mouseleave', 'intensiteiten-hwn copy 13', function() {
+            map.getCanvas().style.cursor = '';//reove "specil" cursor style
+            popup.remove();//hide popup
+        });
+
+        map.on('mousemove','intensiteiten-hwn copy 14' , function(e) {
+            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+            var HoverdData = e.features[0];// Single out the first found feature.
+                
+            // Display a popup with the name of the county
+            popup.setLngLat(e.lngLat)
+                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
+                 .addTo(map);
+
+            //test
+            console.log(HoverdData);
+        });
+        map.on('mouseleave', 'intensiteiten-hwn copy 14', function() {
+            map.getCanvas().style.cursor = '';//reove "specil" cursor style
+            popup.remove();//hide popup
+        });
+
+        map.on('mousemove','intensiteiten-hwn copy 15' , function(e) {
+            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+            var HoverdData = e.features[0];// Single out the first found feature.
+                
+            // Display a popup with the name of the county
+            popup.setLngLat(e.lngLat)
+                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
+                 .addTo(map);
+
+            //test
+            console.log(HoverdData);
+        });
+        map.on('mouseleave', 'intensiteiten-hwn copy 15', function() {
+            map.getCanvas().style.cursor = '';//reove "specil" cursor style
+            popup.remove();//hide popup
+        });
+
+
+
+        //melding van wat er gebeurd is
+        console.log("Layer " + Chap.chapnbr + " aan");
+        
+        //opslaan van de actieve layer zo dat hij later uit kan gezet worden.
+        LastActivatedLayers = chapnbrpp;
+        LastActivatedLayersHumannbr= chapnbrpp;
+        LastActivatedLayersHumannbr++;
+        }  
 };

@@ -163,7 +163,7 @@ p {
     /*color: black;*/
 }
 
-.hoverinfo {
+.Legenda {
 	position: fixed;
 	top: 10px;
 	left: 10px;
@@ -177,16 +177,21 @@ p {
 	z-index: 1;
 }
 
-#hoverinfotest {
-	font-size: 13px;
-	font-family: sans-serif;
-}
-h3.hoverinfo {
+h3.Legenda {
 	font-size: 30px;
 	font-family: sans-serif;
 	color: red !important;
 }
 
+.color {
+    min-width: 100px;
+    /*height: 1.5em;*/
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 3px;
+    text-align: center;
+}
 
 
 /*Thie is the CSS for the right scrolling story line*/

@@ -51,6 +51,8 @@ chapters[1] = {
     location: [5.0,52.397, 9.5],
     maplayers: "Vrachtverkeer",
     AllLayers: ["intensiteiten-hwn copy 11", "intensiteiten-hwn copy 12", "intensiteiten-hwn copy 13", "intensiteiten-hwn copy 14", "intensiteiten-hwn copy 15"],
+    LegendaUIColor: ["white","yellow", "orange", "red", "brown"],
+    LegendaUIName: ["< 2500", "< 5000", "< 7500", "< 10000", "> 10000"],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
     level: "1"
@@ -277,7 +279,6 @@ function UISelectionFeedback(Storynbr){
 //Code snippet used to fly the camera to a different location
 function Fly(Long, Lat, Zoom) {
   if (Zoom == undefined) { Zoom = 11.9}
-    console.log(Zoom);
   map.flyTo({
     center: [Long,Lat],
     zoom: Zoom,
@@ -337,109 +338,47 @@ function LayerFilter(Chap) {
 
     if (Chap.chapnbr == 2) {
        
-        //Legenda selectie
+        //HTML snipits to add arround the variables needed to make a compleat html code with content for the Legend
         var a = "<div class='color' style='background-color: "
         var b = ";'>"
         var c = "</div>"
 
+        //Creating an array with the final HTML needed to populte the legenda
+        var HTMLLegenda = []; // creating the var
+        for (var i in chapters[chapnbrpp].LegendaUIColor) {
+            HTMLLegenda.push(a);
+            HTMLLegenda.push(chapters[chapnbrpp].LegendaUIColor[i]);
+            HTMLLegenda.push(b);
+            HTMLLegenda.push(chapters[chapnbrpp].LegendaUIName[i]);
+            HTMLLegenda.push(c);
+        }
+
         //inserting variables in Legenda
-        LegendaUI.innerHTML = 
-        a + "white" + b + "< 2500" + c + 
-        a + "yellow" + b + "< 5000" + c + 
-        a + "orange" + b + "< 7500" + c + 
-        a + "red" + b + "< 10000" + c + 
-        a + "brown" + b + "> 10000" + c;
+        LegendaUI.innerHTML = HTMLLegenda.join("");  //placing the HTML in the UI with the join function to make sure there are no commas between the variables
 
         //Popup data om te vullen
-        map.on('mousemove','intensiteiten-hwn copy 11' , function(e) {
-            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
-            var HoverdData = e.features[0];// Single out the first found feature.
-                
-            // Display a popup with the data
-            popup.setLngLat(e.lngLat)
-                 .setText(HoverdData)
-                 .addTo(map);
+        for (var i in chapters[chapnbrpp].AllLayers) {
+            map.on('mousemove', chapters[chapnbrpp].AllLayers[i], function(e) {
+                map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+                var HoverdData = e.features[0];// Single out the first found feature.
+                    
+                // Display a popup with the data
+                popup.setLngLat(e.lngLat)
+                     .setText(
+                        "Vrachtverkeer: " + HoverdData.properties.VR_E_WR_H + " " +
+                        "Autoverkeer: " + HoverdData.properties.AU_E_WR_H
+                      )
+                     .addTo(map);
 
-            //test
-            console.log(HoverdData);
-        });
-        map.on('mouseleave', 'intensiteiten-hwn copy 11', function() {
-            map.getCanvas().style.cursor = '';//reove "specil" cursor style
-            popup.remove();//hide popup
-        });
+                //test
+                console.log(HoverdData);
+            });
 
-
-        map.on('mousemove','intensiteiten-hwn copy 12' , function(e) {
-            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
-            var HoverdData = e.features[0];// Single out the first found feature.
-                
-            // Display a popup with the name of the county
-            popup.setLngLat(e.lngLat)
-                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
-                 .addTo(map);
-
-            //test
-            console.log(HoverdData);
-        });
-        map.on('mouseleave', 'intensiteiten-hwn copy 12', function() {
-            map.getCanvas().style.cursor = '';//reove "specil" cursor style
-            popup.remove();//hide popup
-        });
-        map.on('mousemove','intensiteiten-hwn copy 13' , function(e) {
-            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
-            var HoverdData = e.features[0];// Single out the first found feature.
-                
-            // Display a popup with the name of the county
-            popup.setLngLat(e.lngLat)
-                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
-                 .addTo(map);
-
-            //test
-            console.log(HoverdData);
-        });
-        map.on('mouseleave', 'intensiteiten-hwn copy 13', function() {
-            map.getCanvas().style.cursor = '';//reove "specil" cursor style
-            popup.remove();//hide popup
-        });
-
-        map.on('mousemove','intensiteiten-hwn copy 14' , function(e) {
-            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
-            var HoverdData = e.features[0];// Single out the first found feature.
-                
-            // Display a popup with the name of the county
-            popup.setLngLat(e.lngLat)
-                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
-                 .addTo(map);
-
-            //test
-            console.log(HoverdData);
-        });
-        map.on('mouseleave', 'intensiteiten-hwn copy 14', function() {
-            map.getCanvas().style.cursor = '';//reove "specil" cursor style
-            popup.remove();//hide popup
-        });
-
-        map.on('mousemove','intensiteiten-hwn copy 15' , function(e) {
-            map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
-            var HoverdData = e.features[0];// Single out the first found feature.
-                
-            // Display a popup with the name of the county
-            popup.setLngLat(e.lngLat)
-                 .setText("Aantal voertuigen om 6uur: " + HoverdData)
-                 .addTo(map);
-
-            //test
-            console.log(HoverdData);
-        });
-        map.on('mouseleave', 'intensiteiten-hwn copy 15', function() {
-            map.getCanvas().style.cursor = '';//reove "specil" cursor style
-            popup.remove();//hide popup
-        });
-
-
-
-        //melding van wat er gebeurd is
-        console.log("Layer " + Chap.chapnbr + " aan");
+            map.on('mouseleave', chapters[chapnbrpp].AllLayers[i], function() {
+                map.getCanvas().style.cursor = '';//reove "specil" cursor style
+                popup.remove();//hide popup
+            });
+        }
         
         //opslaan van de actieve layer zo dat hij later uit kan gezet worden.
         LastActivatedLayers = chapnbrpp;

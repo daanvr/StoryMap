@@ -55,18 +55,19 @@ chapters[1] = {
     LegendaUIName: ["< 2500", "< 5000", "< 7500", "< 10000", "> 10000"],
     UIToggles: "",
     iconsrc: "imgs/truck.png",
-    level: "1"
+    level: "1",
+    Zoom: "11"
 };
 chapters[2] = {
     chapnbr:3,
     title:"2 Subhoofdstuk",
     htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
-    location: "",
+    location: [5,52.35, 11],
     maplayers: "",
-    AllLayers: [],
+    AllLayers: ["do-mra-ba copy", "do-mra-ab copy", "ex-mra-ba copy", "ex-mra-ab copy", "in-mra-ba copy", "in-mra-ab copy"],
     UIToggles: "",
     iconsrc: "imgs/polution.png",
-    level: "1"
+    level: "1",
 };
 chapters[3] = {
     chapnbr:4,
@@ -364,9 +365,9 @@ function LayerFilter(Chap) {
                     
                 // Display a popup with the data
                 popup.setLngLat(e.lngLat)
-                     .setText(
-                        "Vrachtverkeer: " + HoverdData.properties.VR_E_WR_H + " " +
-                        "Autoverkeer: " + HoverdData.properties.AU_E_WR_H
+                     .setHTML(
+                        "<p>Vrachtverkeer: " + HoverdData.properties.VR_E_WR_H + "<br> " +
+                        "Autoverkeer: " + HoverdData.properties.AU_E_WR_H + "</p>"
                       )
                      .addTo(map);
 

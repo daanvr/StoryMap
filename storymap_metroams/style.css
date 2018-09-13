@@ -21,6 +21,21 @@ p {
     z-index: -1;
 }
 
+
+.mapboxgl-popup-content {
+  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  padding: 0;
+  padding-left: auto;  
+  padding-right: auto;
+  width: 180px;
+  text-align: center;
+}
+
+.mapboxgl-popup-content-wrapper {
+  padding: 1%;
+}
+
+
 .ChapList {
 	top: 0px;
 	right: 30vw;

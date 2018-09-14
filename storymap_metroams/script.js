@@ -24,7 +24,7 @@ zoom: 7.3
 
 //Map controles Toggols
 var nav = new mapboxgl.NavigationControl();
-map.addControl(nav, 'bottom-right');
+map.addControl(nav, 'top-left');
 
 //initial Flight
 Fly(5.0,52.397, 9.5);
@@ -33,138 +33,124 @@ Fly(5.0,52.397, 9.5);
 //map.setLayoutProperty('country-label-lg', 'text-field', ['get', 'name_' + language]);
 
 //"hardcoded" data for now 
-chapters[0] = {
-    chapnbr:1,
-    title:"Verkeer",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.0,52.397, 9.5],
-    maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
-    iconsrc: "imgs/trafficlight.png",
-    level: "0"
-};
-chapters[1] = {
-    chapnbr:2,
-    title:"Licht- en zwaar vrachtverkeer",
-    htmlbody:"<p>Nu zit u de intensiteit van het vrachtverkeer op een doorsnee dag. Des te warmer de kleur is des te meer licht en zwaar vrachtverkeer er rijd.</p>",
-    location: [5.0,52.397, 9.5],
-    maplayers: "Vrachtverkeer",
-    AllLayers: ["intensiteiten-hwn copy 11", "intensiteiten-hwn copy 12", "intensiteiten-hwn copy 13", "intensiteiten-hwn copy 14", "intensiteiten-hwn copy 15"],
-    LegendaUIColor: ["white","yellow", "orange", "red", "brown"],
-    LegendaUIName: ["< 2500", "< 5000", "< 7500", "< 10000", "> 10000"],
-    UIToggles: "",
-    iconsrc: "imgs/truck.png",
-    level: "1",
-    Zoom: "11"
-};
-chapters[2] = {
-    chapnbr:3,
-    title:"InExDo MRA",
-    htmlbody:"<p>InExDo (Intern, Extern, Doorstroom) van de metropol regio Amsterdam.</p>",
-    location: [5,52.35, 9.5],
-    maplayers: "",
-    AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
-    UIToggles: "",
-    iconsrc: "imgs/polution.png",
-    level: "1",
-};
-chapters[3] = {
-    chapnbr:4,
-    title:"3 Subhoofdstuk",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: "",
-    maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
-    iconsrc: "imgs/truck.png",
-    level: "1"
-};
+// chapters[0] = {
+//     chapnbr:1,
+//     title:"Verkeer",
+//     htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
+//     location: [5.0,52.397, 9.5],
+//     maplayers: "",
+//     AllLayers: [],
+//     iconsrc: "imgs/trafficlight.png",
+//     level: "0"
+// };
+// chapters[1] = {
+//     chapnbr:2,
+//     title:"Licht- en zwaar vrachtverkeer",
+//     htmlbody:"<p>Nu zit u de intensiteit van het vrachtverkeer op een doorsnee dag. Des te warmer de kleur is des te meer licht en zwaar vrachtverkeer er rijd.</p>",
+//     location: [5.0,52.397, 9.5],
+//     maplayers: "Vrachtverkeer",
+//     AllLayers: ["intensiteiten-hwn copy 11", "intensiteiten-hwn copy 12", "intensiteiten-hwn copy 13", "intensiteiten-hwn copy 14", "intensiteiten-hwn copy 15"],
+//     LegendaUIColor: ["white","yellow", "orange", "red", "brown"],
+//     LegendaUIName: ["< 2500", "< 5000", "< 7500", "< 10000", "> 10000"],
+//     Popuptext: ["Vrachtverkeer", "Autoverkeer"],
+//     PopupData: ["VR_E_WR_H", "AU_E_WR_H"],
+//     iconsrc: "imgs/truck.png",
+//     level: "1",
+//     Zoom: "11"
+// };
 chapters[4] = {
     chapnbr:5,
-    title:"Openbaar Vervoer",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.120,52.067],
+    title:"Interne versus externe",
+    htmlbody:"<p>Intern: de herkomst en besteming bevinden zig binen het gebied.<br>Exterm: de herkomst of besteming bevinden zig binen het gebied.<br> Doorgaand: de herkomst en besteming bevinden zig niet binen het gebied.</p>",
+    location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
-    UIToggles: "",
     iconsrc: "imgs/polution.png",
     level: "0"
 };
 chapters[5] = {
     chapnbr:6,
-    title:"Subhoofdstuk 1",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.495,51.439],
+    title:"Verkeer MRA",
+    htmlbody:"",
+    location: [5,52.35, 9.5],
     maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
+    AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
+    LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
+    LegendaUIName: ["Intern", "Exterm", "Doorgaand"],
+    Popuptext: ["Intern", "Exterm", "Doorgaand"],
+    PopupData: ["weg_int", "weg_ex", "weg_door"],
+    PopupPercentage: true,
     iconsrc: "imgs/trafficjam.png",
     level: "1"
+
 };
 chapters[6] = {
     chapnbr:7,
-    title:"Subhoofdstuk 2",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.699,50.852],
+    title:"OV MRA",
+    htmlbody:"",
+    location: [5,52.35, 9.5],
     maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
+    AllLayers: ["mra-ov-door", "mra-ov-ext", "mra-ov-int", "mra-ov-door-lz", "mra-ov-ext-lz", "mra-ov-int-lz"],
+    LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
+    LegendaUIName: ["Intern", "Exterm", "Doorgaand"],
+    Popuptext: ["Intern", "Exterm", "Doorgaand"],
+    PopupData: ["ov_int", "ov_ex", "ov_door"],
+    PopupPercentage: true,
     iconsrc: "imgs/trafficlight.png",
-    level: "1"
-};
-chapters[7] = {
-    chapnbr:8,
-    title:"Subhoofdstuk 3",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [6.161,52.254],
-    maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
-    iconsrc: "imgs/truck.png",
     level: "1"
 };
 chapters[8] = {
     chapnbr:9,
-    title:"Hoofdstuk 3",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [6.570,53.208],
+    title:"Qualitatieve verglijking",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
-    UIToggles: "",
     iconsrc: "imgs/polution.png",
     level: "0"
 };
 chapters[9] = {
     chapnbr:10,
-    title:"Subhoofdstuk 1",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [5.699,50.852],
+    title:"Verplaatsingsmethode",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
+    AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
+    LegendaUIColor: ["#fac514","#9e001a", "#2fddf4"],
+    LegendaUIName: ["OV", "Auto", "Fiets"],
+    Popuptext: ["OV", "Auto", "Fiets"],
+    PopupData: ["TOT_OV", "TOT_auto", "TOT_fiets"],
+    PopupPercentage: true,
     iconsrc: "imgs/trafficlight.png",
     level: "1"
 };
 chapters[10] = {
     chapnbr:11,
-    title:"Subhoofdstuk 2",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [6.161,52.254],
+    title:"Verplaatsingsmotief",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
+    AllLayers: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
+    LegendaUIColor: ["#0febbb","#b12f8c", "#8ba6ea"],
+    LegendaUIName: ["Woon-Werk", "Onderwijs", "Zakelijk"],
+    Popuptext: ["Woon-Werk", "Onderwijs", "Zakelijk"],
+    PopupData: ["WW-alles", "OND_alles", "ZK_alles"],
+    PopupPercentage: true,
     iconsrc: "imgs/truck.png",
     level: "1"
 };
 chapters[11] = {
     chapnbr:12,
-    title:"Subhoofdstuk 3",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis pretium risus, molestie lobortis elit varius quis. Curabitur volutpat mi at rhoncus fermentum.</p>",
-    location: [6.570,53.208],
+    title:"Leeftijd",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: [],
-    UIToggles: "",
+    AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
+    LegendaUIColor: ["#e1ece8","#bdd7cd", "#798983", "#56625e"],
+    LegendaUIName: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
+    Popuptext: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
+    PopupData: ["LFT_15", "LFT_15_39", "LFT_40_65", "LFT_65"],
+    PopupPercentage: true,
     iconsrc: "imgs/truck.png",
     level: "1"
 };
@@ -337,7 +323,7 @@ function LayerFilter(Chap) {
         console.log("Layer " + Chap.chapnbr + "." + i +" aan");  // Laat weten dat het uitzetten gelukt is.
     }
 
-    if (Chap.chapnbr == 2) {
+    if (Chap.LegendaUIName != undefined) {
        
         //HTML snipits to add arround the variables needed to make a compleat html code with content for the Legend
         var a = "<div class='color' style='background-color: "
@@ -356,34 +342,67 @@ function LayerFilter(Chap) {
 
         //inserting variables in Legenda
         LegendaUI.innerHTML = HTMLLegenda.join("");  //placing the HTML in the UI with the join function to make sure there are no commas between the variables
+    }
 
-        //Popup data om te vullen
+    //create mouse over Popup if popup content exists
+    if (Chap.Popuptext != undefined) {
+        //every layer gets the following
         for (var i in chapters[chapnbrpp].AllLayers) {
+            //whenever the mous mouves do the following
             map.on('mousemove', chapters[chapnbrpp].AllLayers[i], function(e) {
                 map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
                 var HoverdData = e.features[0];// Single out the first found feature.
-                    
-                // Display a popup with the data
-                popup.setLngLat(e.lngLat)
-                     .setHTML(
-                        "<p>Vrachtverkeer: " + HoverdData.properties.VR_E_WR_H + "<br> " +
-                        "Autoverkeer: " + HoverdData.properties.AU_E_WR_H + "</p>"
-                      )
-                     .addTo(map);
+                
+                //if popuppersentage is ture strat calculating total by adding all togather.
+                if (PopupPercentageTotal === undefined) {
+                        var PopupPercentageTotal;
+                };
 
-                //test
+                if (chapters[chapnbrpp].PopupPercentage === true) {
+                    var PopupPercentageTotal = 0;
+                    for (var i in chapters[chapnbrpp].PopupData) {
+                        PopupPercentageTotal += HoverdData.properties[chapters[chapnbrpp].PopupData[i]];
+                    }
+                }
+
+
+                //prepare popup html content
+                var PopupHtmlContent = ""; //create var for poupup content to be pushed into 
+
+                for (var i in chapters[chapnbrpp].Popuptext) {
+                        //fill the popoup content cue 
+                        PopupHtmlContent += chapters[chapnbrpp].Popuptext[i];
+                        PopupHtmlContent += ": ";
+                        PopupHtmlContent += HoverdData.properties[chapters[chapnbrpp].PopupData[i]]; //#Array seption!
+                        if (chapters[chapnbrpp].PopupPercentage === true) {  // phisicaly add the % at the end of the value if needed.
+                            PopupHtmlContent += " (";
+                            //calulate a rounded percentage
+                            PopupHtmlContent += Math.round((HoverdData.properties[chapters[chapnbrpp].PopupData[i]]/PopupPercentageTotal)*100);
+                            PopupHtmlContent += "%";
+                            PopupHtmlContent += ")";                            
+                        }
+                        PopupHtmlContent += "<br>";
+                    }    
+
+                // Display a popup with the prepared data
+                popup.setLngLat(e.lngLat) // set popup to "e" which is mouse location
+                     .setHTML("<p>" + PopupHtmlContent + "</p>") //populate the popup with html 
+                     .addTo(map); //display popup
+
+                //print entirty or array data
                 console.log(HoverdData);
             });
 
+            //for every layer make sure popup disapears when mouse is not on layer anymore
             map.on('mouseleave', chapters[chapnbrpp].AllLayers[i], function() {
-                map.getCanvas().style.cursor = '';//reove "specil" cursor style
+                map.getCanvas().style.cursor = '';//reveert to normal mouse style
                 popup.remove();//hide popup
             });
         }
-        
-        //opslaan van de actieve layer zo dat hij later uit kan gezet worden.
-        LastActivatedLayers = chapnbrpp;
-        LastActivatedLayersHumannbr= chapnbrpp;
-        LastActivatedLayersHumannbr++;
-        }  
+    }  
+
+    //opslaan van de actieve layer zo dat hij later uit kan gezet worden.
+    LastActivatedLayers = chapnbrpp;
+    LastActivatedLayersHumannbr= chapnbrpp;
+    LastActivatedLayersHumannbr++;
 };

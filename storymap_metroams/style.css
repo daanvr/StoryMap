@@ -37,6 +37,7 @@ p {
 
 
 .ChapList {
+	display: none;
 	top: 0px;
 	right: 30vw;
  	position: absolute;
@@ -180,7 +181,7 @@ p {
 
 .Legenda {
 	position: fixed;
-	top: 10px;
+	bottom: 35px;
 	left: 10px;
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 5px;
@@ -206,6 +207,9 @@ h3.Legenda {
     margin-bottom: 5px;
     padding: 3px;
     text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 0px 6px rgba(0,0,0,0.9);
 }
 
 
@@ -221,15 +225,18 @@ h3.Legenda {
 }
 
 .StoryContainer {
-	background-color: rgba(0, 0, 0, 0.8);
-	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 4px;
 	margin: 10px;
-	padding: 10px;
-	color: white;
+	color: black;
 }
 
 .story {
-	padding: 10px;
+	padding: 20px;
+}
+
+.story h1 {
+	text-align: center;
 }
 
 .substory {
@@ -241,8 +248,8 @@ h3.Legenda {
 	padding-top: 0px;
 	overflow: hidden;
 	/*transition: transform 0.2s ease-out;*/
-	border-radius: 10px;
-	margin: 10px;
+	border-radius: 2px;
+	margin-top: 2px;
 	opacity: 0.7;
 	color: black;
 }

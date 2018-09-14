@@ -60,11 +60,11 @@ chapters[1] = {
 };
 chapters[2] = {
     chapnbr:3,
-    title:"2 Subhoofdstuk",
-    htmlbody:"<p>Lorem ipsum dolor sit amet.</p><img class='storyimg' src='imgs/stat.gif'alt='Smiley face'>",
+    title:"InExDo MRA",
+    htmlbody:"<p>InExDo (Intern, Extern, Doorstroom) van de metropol regio Amsterdam.</p>",
     location: [5,52.35, 11],
     maplayers: "",
-    AllLayers: ["do-mra-ba copy", "do-mra-ab copy", "ex-mra-ba copy", "ex-mra-ab copy", "in-mra-ba copy", "in-mra-ab copy"],
+    AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
     UIToggles: "",
     iconsrc: "imgs/polution.png",
     level: "1",

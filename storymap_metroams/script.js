@@ -62,7 +62,7 @@ chapters[2] = {
     chapnbr:3,
     title:"InExDo MRA",
     htmlbody:"<p>InExDo (Intern, Extern, Doorstroom) van de metropol regio Amsterdam.</p>",
-    location: [5,52.35, 11],
+    location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
     UIToggles: "",

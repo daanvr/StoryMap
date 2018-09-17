@@ -60,8 +60,8 @@ Fly(5.0,52.397, 9.5);
 // };
 chapters[4] = {
     chapnbr:5,
-    title:"Interne versus externe",
-    htmlbody:"<p>Intern: de herkomst en besteming bevinden zig binen het gebied.<br>Exterm: de herkomst of besteming bevinden zig binen het gebied.<br> Doorgaand: de herkomst en besteming bevinden zig niet binen het gebied.</p>",
+    title:"Intern en doorgaand verkeer",
+    htmlbody:"<p>Intern: de herkomst en bestemming bevinden zich binen het gebied.<br>Extern: de herkomst of besteming bevindt zich binnen het gebied.<br> Doorgaand: de herkomst en bestemming bevinden zich buiten het gebied.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
@@ -70,7 +70,7 @@ chapters[4] = {
 };
 chapters[5] = {
     chapnbr:6,
-    title:"Verkeer MRA",
+    title:"Wegverkeer (MRA)",
     htmlbody:"",
     location: [5,52.35, 9.5],
     maplayers: "",
@@ -86,7 +86,7 @@ chapters[5] = {
 };
 chapters[6] = {
     chapnbr:7,
-    title:"OV MRA",
+    title:"Openbaar Vervoer (MRA)",
     htmlbody:"",
     location: [5,52.35, 9.5],
     maplayers: "",
@@ -101,7 +101,7 @@ chapters[6] = {
 };
 chapters[8] = {
     chapnbr:9,
-    title:"Qualitatieve verglijking",
+    title:"Kwalitatieve vergelijking",
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
@@ -111,7 +111,7 @@ chapters[8] = {
 };
 chapters[9] = {
     chapnbr:10,
-    title:"Verplaatsingsmethode",
+    title:"Vervoerswijze",
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
@@ -134,7 +134,7 @@ chapters[10] = {
     LegendaUIColor: ["#0febbb","#b12f8c", "#8ba6ea"],
     LegendaUIName: ["Woon-Werk", "Onderwijs", "Zakelijk"],
     Popuptext: ["Woon-Werk", "Onderwijs", "Zakelijk"],
-    PopupData: ["WW-alles", "OND_alles", "ZK_alles"],
+    PopupData: ["WW_alles", "OND_alles", "ZK_alles"],
     PopupPercentage: true,
     iconsrc: "imgs/truck.png",
     level: "1"

@@ -21,6 +21,13 @@ p {
     z-index: -1;
 }
 
+.TutorialLayer {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 1000px;
+  z-index: 10;
+}
 
 .mapboxgl-popup-content {
   font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;

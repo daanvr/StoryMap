@@ -6,6 +6,11 @@ body {
 
 h1 {
 	font: 20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+
+h2 {
+	font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 p {
@@ -19,6 +24,14 @@ p {
     top: 0px;
     left: 0px;
     z-index: -1;
+}
+
+.StoryNav {
+	position: fixed;
+	top: 10px;
+	right: 460px;
+	z-index: 1;
+
 }
 
 .TutorialLayer {
@@ -98,7 +111,7 @@ p {
  	width: 35px;
  	overflow: hidden;
  	/*transition: 0.5s;*/
-	max-height: 35px;
+	max-height: 1em;
 	float: right;
 	/*border-bottom: 1px solid #ddd;*/
 	/*background-color: #ddd;*/
@@ -223,12 +236,16 @@ h3.Legenda {
 /*Thie is the CSS for the right scrolling story line*/
 .stories {
 	position: absolute;
-	width: 30vw;
+	width: 450px;
 	height: 100vh;
 	right: 0px;
 	overflow-y: auto;
 	z-index: 1;
-	/*padding: 10px;*/
+}
+
+
+.StoryContainer:first-child {
+	background-color: rgba(255, 255, 255, 0.95);
 }
 
 .StoryContainer {
@@ -239,7 +256,8 @@ h3.Legenda {
 }
 
 .story {
-	padding: 20px;
+	padding: 15px 25px 0px 25px;
+	text-align: justify;
 }
 
 .story h1 {
@@ -247,23 +265,23 @@ h3.Legenda {
 }
 
 .substory {
-	max-height: 30px;
-	padding-left: 35px;
+	max-height: 3.25em;
+	padding-left: 30px;
 	background-color: white;
 	min-height: 10px;
-	padding: 20px;
 	padding-top: 0px;
 	overflow: hidden;
-	/*transition: transform 0.2s ease-out;*/
 	border-radius: 2px;
 	margin-top: 2px;
 	opacity: 0.7;
 	color: black;
+	padding-right: 30px;
+	text-align: justify;
+
 }
 
 .substory:hover {
 	cursor: pointer;
- 	/*max-height: none;*/
 }
 
 .substory:hover {
@@ -273,7 +291,6 @@ h3.Legenda {
 
 
 .substory.selected {
- 	/*background-color: rgb(0, 0, 0, 0.05);*/
  	max-height: none;
  	opacity: 1;
 }
@@ -290,3 +307,43 @@ h3.Legenda {
 .mapboxgl-ctrl-bottom-right {
 	transform: translate(-30vw, 0);
 }
+
+
+.infoicon {
+    position: relative;
+    display: inline-block;
+    height: 0.9em;
+    margin-left: 0.3em;
+    top: 0.1em;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    transform: translate(0, 5px);
+    width: 75%;
+    background-color: rgba(0,0,0,0.85);
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+
+    font: 13px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: -8%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent rgba(0,0,0,0.85) transparent;
+}
+
+.infoicon:hover ~.tooltiptext {
+    visibility: visible;
+}1

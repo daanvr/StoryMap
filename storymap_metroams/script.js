@@ -1,4 +1,5 @@
 var chapters = new Array();
+var SelectedStory;
 var LegendaUI = document.getElementById('Legenda');
 //Mapbox initalisation
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGFhbnZyIiwiYSI6ImNpdTJmczN3djAwMHEyeXBpNGVndWtuYXEifQ.GYZf7r9gTfQL3W-GpmmJ3A';
@@ -58,42 +59,66 @@ Fly(5.0,52.397, 9.5);
 //     level: "1",
 //     Zoom: "11"
 // };
+chapters[2] = {
+    chapnbr:5,
+    // title:"DAILY URBAN SYSTEM METROPOOL REGIO AMSTERDAM",
+    //title:"Daily Urban System Metropool Regio Amsterdam",
+    title:"",
+    htmlbody:"<img src='imgs/vervoerregioams.png' style='left: 35px; position: relative;'> <br> <h1 style='margin: 0px;'>Daily Urban System </h1> <br> <p style='margin: 0px;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem. Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p><br>",
+    level: "0"
+};
+
+// chapters[3] = {
+//     chapnbr:5,
+//     // title:"DAILY URBAN SYSTEM METROPOOL REGIO AMSTERDAM",
+//     //title:"Daily Urban System Metropool Regio Amsterdam",
+//     title:"",
+//     htmlbody:"Intern: de herkomst en bestemming bevinden zich binen het gebied.<br>Extern: de herkomst of besteming bevindt zich binnen het",
+//     level: "1"
+// };
+
+
 chapters[4] = {
     chapnbr:5,
     title:"Intern en doorgaand verkeer",
-    htmlbody:"<p>Intern: de herkomst en bestemming bevinden zich binen het gebied.<br>Extern: de herkomst of besteming bevindt zich binnen het gebied.<br> Doorgaand: de herkomst en bestemming bevinden zich buiten het gebied.</p>",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem. Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
-    iconsrc: "imgs/polution.png",
-    level: "0"
+    iconsrc: "",
+    level: "0",
+    InfoIcon: true,
+    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem." 
 };
+
 chapters[5] = {
     chapnbr:6,
     title:"Wegverkeer (MRA)",
-    htmlbody:"",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
     LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
-    LegendaUIName: ["Intern", "Exterm", "Doorgaand"],
-    Popuptext: ["Intern", "Exterm", "Doorgaand"],
+    LegendaUIName: ["Intern", "Extern", "Doorgaand"],
+    Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["weg_int", "weg_ex", "weg_door"],
     PopupPercentage: true,
     iconsrc: "imgs/trafficjam.png",
+    InfoIcon: true,
+    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.", 
     level: "1"
 
 };
 chapters[6] = {
     chapnbr:7,
     title:"Openbaar Vervoer (MRA)",
-    htmlbody:"",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-ov-door", "mra-ov-ext", "mra-ov-int", "mra-ov-door-lz", "mra-ov-ext-lz", "mra-ov-int-lz"],
     LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
-    LegendaUIName: ["Intern", "Exterm", "Doorgaand"],
-    Popuptext: ["Intern", "Exterm", "Doorgaand"],
+    LegendaUIName: ["Intern", "Extern", "Doorgaand"],
+    Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["ov_int", "ov_ex", "ov_door"],
     PopupPercentage: true,
     iconsrc: "imgs/trafficlight.png",
@@ -102,7 +127,7 @@ chapters[6] = {
 chapters[8] = {
     chapnbr:9,
     title:"Kwalitatieve vergelijking",
-    htmlbody:"",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.  Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
@@ -112,7 +137,7 @@ chapters[8] = {
 chapters[9] = {
     chapnbr:10,
     title:"Vervoerswijze",
-    htmlbody:"",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
@@ -121,13 +146,15 @@ chapters[9] = {
     Popuptext: ["OV", "Auto", "Fiets"],
     PopupData: ["TOT_OV", "TOT_auto", "TOT_fiets"],
     PopupPercentage: true,
+    InfoIcon: true,
+    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.", 
     iconsrc: "imgs/trafficlight.png",
     level: "1"
 };
 chapters[10] = {
     chapnbr:11,
     title:"Verplaatsingsmotief",
-    htmlbody:"",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
@@ -136,13 +163,15 @@ chapters[10] = {
     Popuptext: ["Woon-Werk", "Onderwijs", "Zakelijk"],
     PopupData: ["WW_alles", "OND_alles", "ZK_alles"],
     PopupPercentage: true,
+    InfoIcon: true,
+    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.", 
     iconsrc: "imgs/truck.png",
     level: "1"
 };
 chapters[11] = {
     chapnbr:12,
     title:"Leeftijd",
-    htmlbody:"",
+    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
@@ -163,8 +192,11 @@ function Build(){
 	   	var iplusplus = i;
 	   	iplusplus++;
 
-	   	var LastChap;
-	   	if (chapters[i].level == 0) { LastChap = "Chap" + iplusplus;}
+        var LastChap;
+        if (chapters[i].level == 0) { LastChap = "Chap" + iplusplus;}
+        // var Tooltip;
+        // if (chapters[i].InfoIcon === true) { Tooltip = true}
+
 
 	   	BuildChapList (i, iplusplus, LastChap);
 	   	BuildStoryList (i, iplusplus, LastChap);
@@ -194,31 +226,52 @@ function BuildChapList (i, iplusplus, LastChap) {
 };
 
 function BuildStoryList (i, iplusplus, LastChap) {
-	var StoryListItem = document.createElement("div");
+	
+    var StoryListItem = document.createElement("div");
+    
     StoryListItem.id = "Story" + iplusplus; 
-   	if (chapters[i].level == 0) {StoryListItem.className = "story";
-    } else {StoryListItem.className = "substory";}
-    StoryListItem.innerHTML = '<h1>' + chapters[i].title + '</h1>' + chapters[i].htmlbody;
-    StoryListItem.onclick = (function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
-      	var currentI = i;
-      	currentI++
-      	return function() {ChapSelect(currentI + '');}})();
+   	
+        var Tooltip;
+        if (chapters[i].InfoIcon === true) {
+            Tooltip = "<img src='imgs/info.png' class='infoicon'>  <div class='tooltiptext'>";
+            Tooltip += chapters[i].InfoText;
+            Tooltip += "</div>";
+        } else {
+            Tooltip = "";
+        }
+
+
     if (chapters[i].level == 0) {
-    	var Container = document.createElement("div");
-   		Container.id = "StoryContainer" + LastChap;
-   		Container.className = "StoryContainer " + LastChap;
-   		document.getElementById('stories').appendChild(Container);
-   		document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
+        StoryListItem.className = "story";
+        StoryListItem.innerHTML = '<h1>' + chapters[i].title + Tooltip + '</h1>' + chapters[i].htmlbody;
+        var Container = document.createElement("div");
+        Container.id = "StoryContainer" + LastChap;
+        Container.className = "StoryContainer " + LastChap;
+        document.getElementById('stories').appendChild(Container);
+        document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
     } else {
-    	document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
+        StoryListItem.className = "substory";
+        StoryListItem.innerHTML = '<h2>' + chapters[i].title + Tooltip + '</h2>' + chapters[i].htmlbody;
+        StoryListItem.onclick = (
+            function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
+                var currentI = i;
+                    currentI++
+                    return function() {
+                        ChapSelect(currentI + '');
+                    }; 
+            }
+        )();
+        document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
     }
+
     console.log("Story div: " + i + "/" + chapters.length);
 };
 
 
 
-//ChapSelect(1);
+
 function ChapSelect(nbr) {
+    SelectedStory = nbr;
 	nbr--;
 
 	//fly to
@@ -406,3 +459,21 @@ function LayerFilter(Chap) {
     LastActivatedLayersHumannbr= chapnbrpp;
     LastActivatedLayersHumannbr++;
 };
+
+
+//To do: var declared at begining 
+function NextStory(again) {
+    if (again === false) {
+        var nextstory = SelectedStory;
+    }
+    var nextstory = SelectedStory;
+    nextstory++;
+    console.log(nextstory);
+    //SelectedStory does not need a ++ because it is the hman number(starting at 1) and not the machine number(starting at 0)
+    if (chapters[SelectedStory] != undefined && chapters[SelectedStory].level == 1 ) {
+        ChapSelect(nextstory)
+        console.log("selecting! " + nextstory);
+    } else {
+         NextStory(true);
+    }
+}

@@ -81,102 +81,111 @@ chapters[2] = {
 chapters[4] = {
     chapnbr:5,
     title:"Intern en doorgaand verkeer",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem. Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p>",
+    htmlbody:"<br>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
     iconsrc: "",
     level: "0",
-    InfoIcon: true,
-    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem." 
+    InfoIcon: false,
+    InfoText: "" 
 };
 
 chapters[5] = {
     chapnbr:6,
-    title:"Wegverkeer (MRA)",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
+    title:"Weinig doorgaand autoverkeer",
+    htmlbody:"<p>Meeste verkeer op de snelwegen in en om Amsterdam is verkeer met een herkomst- en bestemming binnen de MRA. Op de A2 of de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, dat dus niet in de MRA begint of eindigt, is binnen  de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
     LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
     LegendaUIName: ["Intern", "Extern", "Doorgaand"],
+    LegendaToggles: [["mra-weg-int", "mra-weg-int-lz"],["mra-weg-ext", "mra-weg-ext-lz"],["mra-weg-door","mra-weg-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["weg_int", "weg_ex", "weg_door"],
+    Variables: ["weg_int", "weg_ex", "weg_door"],    
     PopupPercentage: true,
     iconsrc: "imgs/trafficjam.png",
     InfoIcon: true,
-    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.", 
+    InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
     level: "1"
 
 };
 chapters[6] = {
     chapnbr:7,
-    title:"Openbaar Vervoer (MRA)",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
+    title:"Openbaar vervoer brengt mensen van en naar Amsterdam",
+    titlelines: "",
+    htmlbody:"<p>Meeste verplaatsingen met openbaar vervoer hebben een herkomst of bestemming in Amsterdam. De spoorlijn richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-ov-door", "mra-ov-ext", "mra-ov-int", "mra-ov-door-lz", "mra-ov-ext-lz", "mra-ov-int-lz"],
     LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
     LegendaUIName: ["Intern", "Extern", "Doorgaand"],
+    LegendaToggles: [["mra-ov-int", "mra-ov-int-lz"],["mra-ov-ext", "mra-ov-ext-lz"],["mra-ov-door","mra-ov-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["ov_int", "ov_ex", "ov_door"],
     PopupPercentage: true,
     iconsrc: "imgs/trafficlight.png",
+    InfoIcon: true,
+    InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
     level: "1"
 };
 chapters[8] = {
     chapnbr:9,
-    title:"Kwalitatieve vergelijking",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.  Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p>",
+    title:"Meeste verplaatsingen naar Amsterdam",
+    htmlbody:"<p>De meeste verplaatsingen gaan van en naar Amsterdam, waarbij de sterkste relatie die is tussen Amsterdam en Amstelland-Meerlanden. Ook de relatie tussen Waterland en Zaanstreek en Amsterdam is fors.</p><p>Verder valt op dat er grote stromen zijn naar gebieden buiten de MRA van- en naar Amsterdam. De relaties tussen andere delen van de MRA zijn relatief klein.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
     iconsrc: "imgs/polution.png",
+    InfoIcon: true,
+    InfoText: "data: OViN & OViA, 2010-2017",
     level: "0"
 };
 chapters[9] = {
     chapnbr:10,
     title:"Vervoerswijze",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
+    htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
     LegendaUIColor: ["#fac514","#9e001a", "#2fddf4"],
     LegendaUIName: ["OV", "Auto", "Fiets"],
+    LegendaToggles: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
     Popuptext: ["OV", "Auto", "Fiets"],
     PopupData: ["TOT_OV", "TOT_auto", "TOT_fiets"],
     PopupPercentage: true,
-    InfoIcon: true,
-    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.", 
+    InfoIcon: false,
     iconsrc: "imgs/trafficlight.png",
     level: "1"
 };
 chapters[10] = {
     chapnbr:11,
     title:"Verplaatsingsmotief",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
+    htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
     LegendaUIColor: ["#0febbb","#b12f8c", "#8ba6ea"],
     LegendaUIName: ["Woon-Werk", "Onderwijs", "Zakelijk"],
+    LegendaToggles: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
     Popuptext: ["Woon-Werk", "Onderwijs", "Zakelijk"],
     PopupData: ["WW_alles", "OND_alles", "ZK_alles"],
     PopupPercentage: true,
-    InfoIcon: true,
-    InfoText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.", 
+    InfoIcon: false,
     iconsrc: "imgs/truck.png",
     level: "1"
 };
 chapters[11] = {
     chapnbr:12,
     title:"Leeftijd",
-    htmlbody:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem.</p>",
+    htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
     LegendaUIColor: ["#e1ece8","#bdd7cd", "#798983", "#56625e"],
     LegendaUIName: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
+    LegendaToggles: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
     Popuptext: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
     PopupData: ["LFT_15", "LFT_15_39", "LFT_40_65", "LFT_65"],
     PopupPercentage: true,
@@ -231,25 +240,27 @@ function BuildStoryList (i, iplusplus, LastChap) {
     
     StoryListItem.id = "Story" + iplusplus; 
    	
-        var Tooltip;
-        if (chapters[i].InfoIcon === true) {
-            Tooltip = "<img src='imgs/info.png' class='infoicon'>  <div class='tooltiptext'>";
-            Tooltip += chapters[i].InfoText;
-            Tooltip += "</div>";
-        } else {
-            Tooltip = "";
-        }
+    //preparing the content of the tooltip for being used later
+    var Tooltip;
+    if (chapters[i].InfoIcon === true) {
+        Tooltip = "<img src='imgs/info.png' class='infoicon'>  <div class='tooltiptext'>";
+        Tooltip += chapters[i].InfoText;
+        Tooltip += "</div>";
+    } else {
+        Tooltip = "";
+    }
 
-
+    //if statment ot diside if the story is a main soty or a sub sotry
     if (chapters[i].level == 0) {
+        //preparing story div
         StoryListItem.className = "story";
         StoryListItem.innerHTML = '<h1>' + chapters[i].title + Tooltip + '</h1>' + chapters[i].htmlbody;
         var Container = document.createElement("div");
         Container.id = "StoryContainer" + LastChap;
         Container.className = "StoryContainer " + LastChap;
         document.getElementById('stories').appendChild(Container);
-        document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
     } else {
+        //preparing story div
         StoryListItem.className = "substory";
         StoryListItem.innerHTML = '<h2>' + chapters[i].title + Tooltip + '</h2>' + chapters[i].htmlbody;
         StoryListItem.onclick = (
@@ -261,14 +272,12 @@ function BuildStoryList (i, iplusplus, LastChap) {
                     }; 
             }
         )();
-        document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
     }
+    //actually pushing the div that has been built previously to the HTML
+    document.getElementById('StoryContainer' + LastChap).appendChild(StoryListItem);
 
     console.log("Story div: " + i + "/" + chapters.length);
 };
-
-
-
 
 function ChapSelect(nbr) {
     SelectedStory = nbr;
@@ -381,7 +390,9 @@ function LayerFilter(Chap) {
         //HTML snipits to add arround the variables needed to make a compleat html code with content for the Legend
         var a = "<div class='color' style='background-color: "
         var b = ";'>"
-        var c = "</div>"
+        var c = "<label class='switch'><input onclick='LayerToggle();' id='LayerNBR"
+        var d = "' type='checkbox' checked><span class='slider round'></span></label>"
+        var e = "</div>"
 
         //Creating an array with the final HTML needed to populte the legenda
         var HTMLLegenda = []; // creating the var
@@ -389,8 +400,11 @@ function LayerFilter(Chap) {
             HTMLLegenda.push(a);
             HTMLLegenda.push(chapters[chapnbrpp].LegendaUIColor[i]);
             HTMLLegenda.push(b);
-            HTMLLegenda.push(chapters[chapnbrpp].LegendaUIName[i]);
             HTMLLegenda.push(c);
+            HTMLLegenda.push(i);
+            HTMLLegenda.push(d);
+            HTMLLegenda.push(chapters[chapnbrpp].LegendaUIName[i]);
+            HTMLLegenda.push(e);
         }
 
         //inserting variables in Legenda
@@ -477,3 +491,70 @@ function NextStory(again) {
          NextStory(true);
     }
 }
+
+
+function LayerToggle() {
+    // SelectedStory nbr
+    console.log(SelectedStory);
+    var CurrentStory = SelectedStory;
+    CurrentStory--
+    console.log(CurrentStory);
+    var LegendaToogleStatus = new Array();
+    var test;
+    for (i in chapters[CurrentStory].LegendaUIColor) {
+        LegendaToogleStatus[i] = document.getElementById("LayerNBR" + i).checked
+        test = i;
+        if (LegendaToogleStatus[i] === true) {
+            console.log("testing: ");
+            console.log(chapters[CurrentStory].LegendaToggles[i].lastIndexOf.length);
+
+            if (chapters[CurrentStory].LegendaToggles[i].lastIndexOf.length > 1 ) {
+                console.log("running mor than 1 script");
+
+                for (i2 in chapters[CurrentStory].LegendaToggles[i]) {
+                    map.setLayoutProperty(chapters[CurrentStry].LegendaToggles[i][i2], 'visibility', 'visible');  //zet de layer met de specifique naam uit
+                }
+            } else {
+                console.log("running  1 script");
+                map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i], 'visibility', 'visible');  //zet de layer met de specifique naam uit
+            }
+        } else {
+            if (chapters[CurrentStory].LegendaToggles[i].lastIndexOf.length > 1) {
+                for (i2 in chapters[CurrentStory].LegendaToggles[i]) {
+                    map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i][i2], 'visibility', 'none');  //zet de layer met de specifique naam uit
+                }
+            } else {
+                map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i], 'visibility', 'none');  //zet de layer met de specifique naam uit
+            }            
+        }
+    }
+    console.log(LegendaToogleStatus);
+
+
+
+    var LayerStyleProperties = new Array();
+    for (i in chapters[SelectedStory].AllLayers) {
+        LayerStyleProperties[i] = map.getPaintProperty(chapters[SelectedStory].AllLayers[i], "line-width");
+    }
+    console.log(LayerStyleProperties);
+    
+
+
+    // LayerStyleProperties[5][1][1][2] = 50;
+    // LayerStyleProperties[10]=
+    //                             [
+    //                               "+",
+    //                               [
+    //                                 "+",
+    //                                 [ "/", ["get", "weg_door"],50],
+    //                                 [ "/", ["get", "weg_ex"], 50]
+    //                               ],
+    //                               [ "/", ["get", "weg_int"], 50]
+    //                             ]; 
+    // map.setPaintProperty(chapters[SelectedStory].AllLayers[5], "line-width", LayerStyleProperties[5]);
+}
+
+
+
+
+

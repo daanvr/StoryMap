@@ -248,6 +248,14 @@ h3.Legenda {
 	background-color: rgba(255, 255, 255, 0.95);
 }
 
+.StoryContainer:last-child {
+	background-color: transparent;
+	color: white;
+	font-weight: bold
+	padding: 100px;
+	margin-bottom: 150px;
+}
+
 .StoryContainer {
 	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 4px;
@@ -257,7 +265,7 @@ h3.Legenda {
 
 .story {
 	padding: 15px 25px 0px 25px;
-	text-align: justify;
+	/*text-align: justify;*/
 }
 
 .story h1 {
@@ -276,8 +284,12 @@ h3.Legenda {
 	opacity: 0.7;
 	color: black;
 	padding-right: 30px;
-	text-align: justify;
+	/*text-align: justify;*/
 
+}
+
+.secondtitlerow {
+	max-height: 4.5em
 }
 
 .substory:hover {
@@ -303,6 +315,8 @@ h3.Legenda {
 .storyimg {
 	max-width: calc(30vw - 40px);
 }
+
+
 
 .mapboxgl-ctrl-bottom-right {
 	transform: translate(-30vw, 0);

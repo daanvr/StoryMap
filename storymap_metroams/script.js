@@ -100,10 +100,12 @@ chapters[5] = {
     AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
     LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
     LegendaUIName: ["Intern", "Extern", "Doorgaand"],
+    LegendaToggleButton: true,
     LegendaToggles: [["mra-weg-int", "mra-weg-int-lz"],["mra-weg-ext", "mra-weg-ext-lz"],["mra-weg-door","mra-weg-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["weg_int", "weg_ex", "weg_door"],
     Variables: ["weg_int", "weg_ex", "weg_door"],    
+    StyleDivider : 3000,
     PopupPercentage: true,
     iconsrc: "imgs/trafficjam.png",
     InfoIcon: true,
@@ -115,15 +117,18 @@ chapters[6] = {
     chapnbr:7,
     title:"Openbaar vervoer brengt mensen van en naar Amsterdam",
     titlelines: "",
+    titlerows: 2,
     htmlbody:"<p>Meeste verplaatsingen met openbaar vervoer hebben een herkomst of bestemming in Amsterdam. De spoorlijn richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-ov-door", "mra-ov-ext", "mra-ov-int", "mra-ov-door-lz", "mra-ov-ext-lz", "mra-ov-int-lz"],
     LegendaUIColor: ["#FAC514","#009E03", "#2F32F4"],
     LegendaUIName: ["Intern", "Extern", "Doorgaand"],
+    LegendaToggleButton: true,
     LegendaToggles: [["mra-ov-int", "mra-ov-int-lz"],["mra-ov-ext", "mra-ov-ext-lz"],["mra-ov-door","mra-ov-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["ov_int", "ov_ex", "ov_door"],
+    StyleDivider : 3000,
     PopupPercentage: true,
     iconsrc: "imgs/trafficlight.png",
     InfoIcon: true,
@@ -151,10 +156,12 @@ chapters[9] = {
     AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
     LegendaUIColor: ["#fac514","#9e001a", "#2fddf4"],
     LegendaUIName: ["OV", "Auto", "Fiets"],
+    LegendaToggleButton: true,
     LegendaToggles: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
     Popuptext: ["OV", "Auto", "Fiets"],
     PopupData: ["TOT_OV", "TOT_auto", "TOT_fiets"],
     PopupPercentage: true,
+    StyleDivider : 10000,
     InfoIcon: false,
     iconsrc: "imgs/trafficlight.png",
     level: "1"
@@ -168,9 +175,11 @@ chapters[10] = {
     AllLayers: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
     LegendaUIColor: ["#0febbb","#b12f8c", "#8ba6ea"],
     LegendaUIName: ["Woon-Werk", "Onderwijs", "Zakelijk"],
+    LegendaToggleButton: true,
     LegendaToggles: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
     Popuptext: ["Woon-Werk", "Onderwijs", "Zakelijk"],
     PopupData: ["WW_alles", "OND_alles", "ZK_alles"],
+    StyleDivider : 10000,
     PopupPercentage: true,
     InfoIcon: false,
     iconsrc: "imgs/truck.png",
@@ -185,13 +194,113 @@ chapters[11] = {
     AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
     LegendaUIColor: ["#e1ece8","#bdd7cd", "#798983", "#56625e"],
     LegendaUIName: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
+    LegendaToggleButton: true,
     LegendaToggles: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
     Popuptext: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
     PopupData: ["LFT_15", "LFT_15_39", "LFT_40_65", "LFT_65"],
+    StyleDivider : 10000,
     PopupPercentage: true,
     iconsrc: "imgs/truck.png",
     level: "1"
 };
+chapters[12] = {
+    chapnbr:13,
+    title:"Totaal aantal verplaatsingen & modal split",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: [],
+    iconsrc: "imgs/polution.png",
+    InfoIcon: true,
+    InfoText: "data: OViN & OViA, 2010-2017",
+    level: "0"
+};
+chapters[13] = {
+    chapnbr:14,
+    title:"Verschil in mobiliteit tussen gebieden binnen en buiten de A10",
+    titlerows: 2,
+    htmlbody:"<p>In de meeste gebieden wordt 40 tot 50% van alle verplaatsingen met de auto afgelegd alleen voor gebieden binnen en langs de ring A10 neemt dit af tot 25% en zelfs 10% voor het centrum van Amsterdam.</p><p>Het openbaar vervoer speelt een bescheiden rol in de totale mobiliteit, dat komt mede omdat het grootste deel van de verplaatsingen plaats vindt over korte afstanden.</p>",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: ["", "", ""],
+    LegendaUIColor: ["","", ""],
+    LegendaUIName: ["Auto", "Openbaar Vervoer", "Fiets en Lopen"],
+    LegendaToggleButton: false,
+    LegendaToggles: ["", "", ""],
+    Popuptext: ["Auto", "Openbaar Vervoer", "Fiets en Lopen"],
+    PopupData: ["", "", ""],
+    PopupPercentage: true,
+    StyleDivider: "",
+    InfoIcon: false,
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
+
+
+chapters[14] = {
+    chapnbr:15,
+    title:"Daily-Urban-System Amsterdam dijt uit",
+    htmlbody:"Uit steeds meer gemeenten rondom Amsterdam reizen mensen voor hun werk naar Amsterdam. Tussen 2006 en 2016 is het aantal gemeenten waarvan meer dan 15% van de beroepsbevolking werkt in Amsterdam toegenomen van 22 naar 31. Hierbij ook gemeenten van buiten de Metropoolregio Amsterdam. Het Daily-Urban-System van Amsterdam groeit",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: [],
+    iconsrc: "imgs/polution.png",
+    InfoIcon: true,
+    InfoText: "data: CBS, Banen van werknemers, 2006-2016",
+    level: "0"
+};
+chapters[15] = {
+    chapnbr:16,
+    title:"2006",
+    titlerows: 2,
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: ["", "", ""],
+    LegendaUIColor: ["","", ""],
+    LegendaToggleButton: false,
+    LegendaToggles: ["", "", ""],
+    Popuptext: ["Auto", "Openbaar Vervoer", "Fiets en Lopen"],
+    PopupData: ["", "", ""],
+    PopupPercentage: true,
+    StyleDivider: "",
+    InfoIcon: false,
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
+chapters[16] = {
+    chapnbr:17,
+    title:"2016",
+    titlerows: 2,
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: ["", "", ""],
+    LegendaUIColor: ["","", ""],
+    LegendaToggleButton: false,
+    LegendaToggles: ["", "", ""],
+    Popuptext: ["Auto", "Openbaar Vervoer", "Fiets en Lopen"],
+    PopupData: ["", "", ""],
+    PopupPercentage: true,
+    StyleDivider: "",
+    InfoIcon: false,
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
+
+
+chapters[20] = {
+    chapnbr:21,
+    title:"Einde",
+    htmlbody:"",
+    location: "",
+    maplayers: "",
+    AllLayers: [],
+    iconsrc: "imgs/polution.png",
+    InfoIcon: false,
+    level: "0"
+};
+
 console.log(chapters);
 
 //build chaper menu list & story list
@@ -241,7 +350,7 @@ function BuildStoryList (i, iplusplus, LastChap) {
     StoryListItem.id = "Story" + iplusplus; 
    	
     //preparing the content of the tooltip for being used later
-    var Tooltip;
+    var Tooltip = "";
     if (chapters[i].InfoIcon === true) {
         Tooltip = "<img src='imgs/info.png' class='infoicon'>  <div class='tooltiptext'>";
         Tooltip += chapters[i].InfoText;
@@ -251,7 +360,7 @@ function BuildStoryList (i, iplusplus, LastChap) {
     }
 
     //if statment ot diside if the story is a main soty or a sub sotry
-    if (chapters[i].level == 0) {
+    if (chapters[i].level == 0) { //is main story
         //preparing story div
         StoryListItem.className = "story";
         StoryListItem.innerHTML = '<h1>' + chapters[i].title + Tooltip + '</h1>' + chapters[i].htmlbody;
@@ -259,9 +368,14 @@ function BuildStoryList (i, iplusplus, LastChap) {
         Container.id = "StoryContainer" + LastChap;
         Container.className = "StoryContainer " + LastChap;
         document.getElementById('stories').appendChild(Container);
-    } else {
+    } else { //must be substory
         //preparing story div
-        StoryListItem.className = "substory";
+        if (chapters[i].titlerows === 2) {
+            StoryListItem.className = "substory secondtitlerow";
+        } else {
+            StoryListItem.className = "substory";
+        }
+
         StoryListItem.innerHTML = '<h2>' + chapters[i].title + Tooltip + '</h2>' + chapters[i].htmlbody;
         StoryListItem.onclick = (
             function() {//This is a bit of crazy code called "closure". it is because you can not use the i var inside the funtion that is in the "onclick"
@@ -390,21 +504,32 @@ function LayerFilter(Chap) {
         //HTML snipits to add arround the variables needed to make a compleat html code with content for the Legend
         var a = "<div class='color' style='background-color: "
         var b = ";'>"
-        var c = "<label class='switch'><input onclick='LayerToggle();' id='LayerNBR"
-        var d = "' type='checkbox' checked><span class='slider round'></span></label>"
-        var e = "</div>"
+        var c_box = "<label class='switch'><input onclick='LayerToggle();' id='LayerNBR"
+        var d_box = "' type='checkbox' checked>"
+        var e = "<span class='slider round'></span></label>"
+        var f = "</div>"
 
         //Creating an array with the final HTML needed to populte the legenda
         var HTMLLegenda = []; // creating the var
         for (var i in chapters[chapnbrpp].LegendaUIColor) {
-            HTMLLegenda.push(a);
-            HTMLLegenda.push(chapters[chapnbrpp].LegendaUIColor[i]);
-            HTMLLegenda.push(b);
-            HTMLLegenda.push(c);
-            HTMLLegenda.push(i);
-            HTMLLegenda.push(d);
-            HTMLLegenda.push(chapters[chapnbrpp].LegendaUIName[i]);
-            HTMLLegenda.push(e);
+            if (chapters[chapnbrpp].LegendaToggleButton === true) {
+                HTMLLegenda.push(a);
+                HTMLLegenda.push(chapters[chapnbrpp].LegendaUIColor[i]);
+                HTMLLegenda.push(b);
+                HTMLLegenda.push(c_box);
+                HTMLLegenda.push(i);
+                HTMLLegenda.push(d_box);
+                HTMLLegenda.push(chapters[chapnbrpp].LegendaUIName[i]);
+                HTMLLegenda.push(e);
+                HTMLLegenda.push(f);
+            } else {
+                HTMLLegenda.push(a);
+                HTMLLegenda.push(chapters[chapnbrpp].LegendaUIColor[i]);
+                HTMLLegenda.push(b);
+                HTMLLegenda.push(chapters[chapnbrpp].LegendaUIName[i]);
+                HTMLLegenda.push(e);
+                HTMLLegenda.push(f);
+            }
         }
 
         //inserting variables in Legenda
@@ -493,51 +618,422 @@ function NextStory(again) {
 }
 
 
+
+
+
 function LayerToggle() {
     // SelectedStory nbr
-    console.log(SelectedStory);
+    console.log("Selected story human: "+SelectedStory);
     var CurrentStory = SelectedStory;
     CurrentStory--
-    console.log(CurrentStory);
-    var LegendaToogleStatus = new Array();
+    console.log("Selected story code numbesr:"+CurrentStory);
+    var LegendaToogleStatus = new Array(); // status of the legenda toggles
     var test;
-    for (i in chapters[CurrentStory].LegendaUIColor) {
-        LegendaToogleStatus[i] = document.getElementById("LayerNBR" + i).checked
+    for (i in chapters[CurrentStory].LegendaUIColor) { // for every toogle on the page
+        LegendaToogleStatus[i] = document.getElementById("LayerNBR" + i).checked // extracting and saving toggle status
         test = i;
-        if (LegendaToogleStatus[i] === true) {
-            console.log("testing: ");
-            console.log(chapters[CurrentStory].LegendaToggles[i].lastIndexOf.length);
+        if (LegendaToogleStatus[i] === true) { // if the toggle is on:
+            console.log("Layer Toogle is ON of layer: " + chapters[CurrentStory].Popuptext[i]);
+            // console.log("nbr of layers in Toogle: " + chapters[CurrentStory].LegendaToggles[i].length);
+            // console.log("nbr of layers in Toogle using object key: " + Object.keys(chapters[CurrentStory].LegendaToggles[i]).length);
 
-            if (chapters[CurrentStory].LegendaToggles[i].lastIndexOf.length > 1 ) {
-                console.log("running mor than 1 script");
+            if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers in this toggle:
+                console.log("2 layers");
 
-                for (i2 in chapters[CurrentStory].LegendaToggles[i]) {
-                    map.setLayoutProperty(chapters[CurrentStry].LegendaToggles[i][i2], 'visibility', 'visible');  //zet de layer met de specifique naam uit
+                for (i2 in chapters[CurrentStory].LegendaToggles[i]) {// loop throug the layers of the toggle
+                    map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i][i2], 'visibility', 'visible');  //zet de layer met de specifique naam uit
                 }
-            } else {
-                console.log("running  1 script");
+            } else {// if there is one layer in this toggle do this:
+                console.log("1 layer");
                 map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i], 'visibility', 'visible');  //zet de layer met de specifique naam uit
             }
-        } else {
-            if (chapters[CurrentStory].LegendaToggles[i].lastIndexOf.length > 1) {
-                for (i2 in chapters[CurrentStory].LegendaToggles[i]) {
+        } else { // Else the toggle must be off:
+            if (chapters[CurrentStory].LegendaToggles[i].length == 2) { // if therer is 2 layers in this toggle:
+                for (i2 in chapters[CurrentStory].LegendaToggles[i]) {//loop throug both the layers
                     map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i][i2], 'visibility', 'none');  //zet de layer met de specifique naam uit
                 }
-            } else {
+            } else { // else we hope there is only 1:
                 map.setLayoutProperty(chapters[CurrentStory].LegendaToggles[i], 'visibility', 'none');  //zet de layer met de specifique naam uit
             }            
         }
     }
+    console.log("Togggle Status: ");
     console.log(LegendaToogleStatus);
 
 
 
     var LayerStyleProperties = new Array();
-    for (i in chapters[SelectedStory].AllLayers) {
-        LayerStyleProperties[i] = map.getPaintProperty(chapters[SelectedStory].AllLayers[i], "line-width");
+    for (i in chapters[CurrentStory].AllLayers) {
+        LayerStyleProperties[i] = map.getPaintProperty(chapters[CurrentStory].AllLayers[i], "line-width");
     }
-    console.log(LayerStyleProperties);
+    console.log("layer 1 style: ");
+    console.log(LayerStyleProperties[0]);
     
+    //how many layers are on:
+    CountLayersOn = 0 //reinitialise CountLayersOn
+    for (i in LegendaToogleStatus) { //for every toogle
+        CountLayersOn += Number(LegendaToogleStatus[i]);  //add the bollian of the starus (is 0 or 1)
+    }
+    console.log("the number of layers that are on is: "+CountLayersOn);
+
+
+    // var Varsusedbylayers = new Array();
+    // if (LayerStyleProperties[0][1][1][1][1][1] != undefined) {Varsusedbylayers[0] = LayerStyleProperties[0][1][1][1][1][1]; console.log("L1: "+Varsusedbylayers[0]);}
+    // if (LayerStyleProperties[1][1][1][1][1] != undefined) {Varsusedbylayers[1] = LayerStyleProperties[1][1][1][1][1]; console.log("L2: "+Varsusedbylayers[1]);}
+    // if (LayerStyleProperties[1][2][1][1] != undefined) {Varsusedbylayers[2] = LayerStyleProperties[1][2][1][1];console.log("L3: "+Varsusedbylayers[2]);}
+    // if (LayerStyleProperties[1][1][2][1][1] != undefined) {Varsusedbylayers[3] = LayerStyleProperties[1][1][2][1][1];console.log("L4: "+Varsusedbylayers[3]);}
+    
+
+    var StringStyleLayer = "";
+    
+    if (CountLayersOn == 1) {// if only 1 layers is ON
+        StyledLayersCounter = 0; //Start the counter to count the number of styled layers
+        for (i in LegendaToogleStatus) { // go past all toggles.
+            // console.log("testing boolean " + i)
+            if (LegendaToogleStatus[i] == true) {  // if toggle is ON:
+                if (StyledLayersCounter == 0){  // If it is the first layer to be stlyled:
+                    console.log("Toggle: " + i + " is TRUE")
+
+                    //Build a string with the style
+                    StringStyleLayer = '["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']';
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // els it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                } else if (StyledLayersCounter = 1) {}
+            } else {console.log("Toggle: " + i + " is FALSE")}
+        }
+
+
+    } else if (CountLayersOn == 2) {
+        StyledLayersCounter = 0; //Start the counter to count the number of styled layers
+        var StyledLayersDataName = new Array(); //Space to store layer width set to layers above this one. 
+        //console.log("test1");
+        //(i = CountLayersOn; i > 0; i--)
+        //(i in LegendaToogleStatus)
+        for (i = CountLayersOn; i >= 0; i--) { // go past all toggles but backwards, this make sure the last layer is the most backwards and has the accumulated with of all others
+            console.log("rounds to have" + i);
+            if (LegendaToogleStatus[i] == true) {  // if toggle is ON:
+                //console.log("test 2222");
+
+                if (StyledLayersCounter == 0){  // If it is the first layer to be stlyled:
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[0] = chapters[CurrentStory].PopupData[i];
+                    
+                    //Build a string with the style
+                    StringStyleLayer = '["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']';
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // els it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                    StyledLayersCounter++;
+                } else if (StyledLayersCounter = 1) { //else if no layer ways styled, maybe 1 layer was?
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    
+                    //Build a string with the style
+                    StringStyleLayer = '["+",["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[0]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += '],["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']]';
+
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // else it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                }
+            } else {console.log("Toggle: " + i + " is FALSE")}
+        }
+    } else if (CountLayersOn == 3) {
+        StyledLayersCounter = 0; //Start the counter to count the number of styled layers
+        var StyledLayersDataName = new Array(); //Space to store layer width set to layers above this one. 
+        //console.log("test1");
+        //(i = CountLayersOn; i > 0; i--)
+        //(i in LegendaToogleStatus)
+        for (i = CountLayersOn; i >= 0; i--) { // go past all toggles but backwards, this make sure the last layer is the most backwards and has the accumulated with of all others
+            console.log("rounds to have" + i);
+            if (LegendaToogleStatus[i] == true) {  // if toggle is ON:
+                //console.log("test 2222");
+
+                if (StyledLayersCounter == 0){  // If it is the first layer to be stlyled:
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[0] = chapters[CurrentStory].PopupData[i];
+                    
+                    //Build a string with the style
+                    StringStyleLayer = '["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']';
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // els it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                    StyledLayersCounter++;
+                } else if (StyledLayersCounter == 1) { //else if no layer ways styled, maybe 1 layer was?
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[1] = chapters[CurrentStory].PopupData[i];
+
+                    //Build a string with the style
+                    StringStyleLayer = '["+",["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[0]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += '],["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']]';
+
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // else it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                    StyledLayersCounter++;
+                } else if (StyledLayersCounter == 2) { //else if not 0 or 1 layer ways styled, maybe 2 layer were?
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[2] = chapters[CurrentStory].PopupData[i];
+
+                    //Build a string with the style
+                    StringStyleLayer = '["+",["+",["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += '],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[0]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[1]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']]';
+
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // else it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                }
+            } else {console.log("Toggle: " + i + " is FALSE")}
+        }
+    } else if (CountLayersOn == 4) {
+        StyledLayersCounter = 0; //Start the counter to count the number of styled layers
+        var StyledLayersDataName = new Array(); //Space to store layer width set to layers above this one. 
+        //console.log("test1");
+        //(i = CountLayersOn; i > 0; i--)
+        //(i in LegendaToogleStatus)
+        for (i = CountLayersOn; i >= 0; i--) { // go past all toggles but backwards, this make sure the last layer is the most backwards and has the accumulated with of all others
+            console.log("rounds to have" + i);
+            if (LegendaToogleStatus[i] == true) {  // if toggle is ON:
+                //console.log("test 2222");
+
+                if (StyledLayersCounter == 0){  // If it is the first layer to be stlyled:
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[0] = chapters[CurrentStory].PopupData[i];
+                    
+                    //Build a string with the style
+                    StringStyleLayer = '["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']';
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // els it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                    StyledLayersCounter++;
+                } else if (StyledLayersCounter == 1) { //else if no layer ways styled, maybe 1 layer was?
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[1] = chapters[CurrentStory].PopupData[i];
+
+                    //Build a string with the style
+                    StringStyleLayer = '["+",["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[0]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += '],["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']]';
+
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // else it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                    StyledLayersCounter++;
+                } else if (StyledLayersCounter == 2) { //else if not 0 or 1 layer ways styled, maybe 2 layer were?
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[2] = chapters[CurrentStory].PopupData[i];
+
+                    //Build a string with the style
+                    StringStyleLayer = '["+",["+",["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += '],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[0]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[1]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']]';
+
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // else it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }   
+                    StyledLayersCounter++;
+                } else if (StyledLayersCounter == 3) { //else if no layer ways styled, maybe 1 layer was?
+                    console.log("Toggle: " + i + " is TRUE and is named: " + chapters[CurrentStory].Popuptext[i])
+                    StyledLayersDataName[3] = chapters[CurrentStory].PopupData[i];
+
+                    //Build a string with the style
+                    StringStyleLayer = '["+",["+",["+",["/",["get", "';
+                    StringStyleLayer += chapters[CurrentStory].PopupData[i];
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += '],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[0]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[1]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']],["/",["get", "';
+                    StringStyleLayer += StyledLayersDataName[2]; //the width of layers above it are added
+                    StringStyleLayer += '"],';
+                    StringStyleLayer += chapters[CurrentStory].StyleDivider;
+                    StringStyleLayer += ']]';
+
+                    console.log("this is the string: "+StringStyleLayer);
+                    var StringStyleLayer = JSON.parse(StringStyleLayer); //convert the string into a array that can be red by Mapbox.
+                    console.log("Parsing...");
+
+                    if (chapters[CurrentStory].LegendaToggles[i].length == 2 ) { // if therer is 2 layers activated by this toggle:
+                        console.log("2 layers to be styled");
+                        for (i2 in chapters[CurrentStory].LegendaToggles[i]) {  //for every toggle activated by this layer
+                            console.log("painting layer " + i2)
+                            map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i][i2], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                        }
+                    } else { // else it should have 1 layer
+                        console.log("Painting...");
+                        map.setPaintProperty(chapters[CurrentStory].LegendaToggles[i], "line-width", StringStyleLayer); //actually set the style by sending it ot the Mapbox API
+                    }    
+                    StyledLayersCounter++;
+                }
+            } else {console.log("Toggle: " + i + " is FALSE")}
+        }
+    }
+   
+
+
+
 
 
     // LayerStyleProperties[5][1][1][2] = 50;

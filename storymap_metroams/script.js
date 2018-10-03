@@ -64,7 +64,7 @@ chapters[2] = {
     // title:"DAILY URBAN SYSTEM METROPOOL REGIO AMSTERDAM",
     //title:"Daily Urban System Metropool Regio Amsterdam",
     title:"",
-    htmlbody:"<img src='imgs/vervoerregioams.png' style='left: 35px; position: relative;'> <br> <h1 style='margin: 0px;'>Daily Urban System </h1> <br> <p style='margin: 0px;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem. Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p><br>",
+    htmlbody:"<img src='imgs/metroams.png' style='left: -20px; position: relative;'> <br> <h1 style='margin: 0px;'>Daily Urban System </h1> <br> <p style='margin: 0px;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem. Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p><br>",
     level: "0"
 };
 
@@ -104,6 +104,8 @@ chapters[5] = {
     LegendaToggles: [["mra-weg-int", "mra-weg-int-lz"],["mra-weg-ext", "mra-weg-ext-lz"],["mra-weg-door","mra-weg-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["weg_int", "weg_ex", "weg_door"],
+    popuprounded: true,
+    NbrRoundedBij: 1000,
     Variables: ["weg_int", "weg_ex", "weg_door"],    
     StyleDivider : 3000,
     PopupPercentage: true,
@@ -128,6 +130,8 @@ chapters[6] = {
     LegendaToggles: [["mra-ov-int", "mra-ov-int-lz"],["mra-ov-ext", "mra-ov-ext-lz"],["mra-ov-door","mra-ov-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
     PopupData: ["ov_int", "ov_ex", "ov_door"],
+    popuprounded: true,
+    NbrRoundedBij: 1000,
     StyleDivider : 3000,
     PopupPercentage: true,
     iconsrc: "imgs/trafficlight.png",
@@ -160,6 +164,8 @@ chapters[9] = {
     LegendaToggles: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
     Popuptext: ["OV", "Auto", "Fiets"],
     PopupData: ["TOT_OV", "TOT_auto", "TOT_fiets"],
+    popuprounded: true,
+    NbrRoundedBij: 100,
     PopupPercentage: true,
     StyleDivider : 10000,
     InfoIcon: false,
@@ -179,6 +185,8 @@ chapters[10] = {
     LegendaToggles: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
     Popuptext: ["Woon-Werk", "Onderwijs", "Zakelijk"],
     PopupData: ["WW_alles", "OND_alles", "ZK_alles"],
+    popuprounded: true,
+    NbrRoundedBij: 100,
     StyleDivider : 10000,
     PopupPercentage: true,
     InfoIcon: false,
@@ -198,6 +206,8 @@ chapters[11] = {
     LegendaToggles: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
     Popuptext: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
     PopupData: ["LFT_15", "LFT_15_39", "LFT_40_65", "LFT_65"],
+    popuprounded: true,
+    NbrRoundedBij: 100,
     StyleDivider : 10000,
     PopupPercentage: true,
     iconsrc: "imgs/truck.png",
@@ -229,6 +239,8 @@ chapters[13] = {
     LegendaToggles: ["", "", ""],
     Popuptext: ["Auto", "Openbaar Vervoer", "Fiets en Lopen"],
     PopupData: ["TOT_auto", "TOT_OV", "TOT_fiets"],
+    popuprounded: true,
+    NbrRoundedBij: 1000,
     PopupPercentage: true,
     StyleDivider: "",
     InfoIcon: false,
@@ -252,17 +264,17 @@ chapters[14] = {
 chapters[15] = {
     chapnbr:16,
     title:"2006",
-    titlerows: 2,
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["", "", ""],
-    LegendaUIColor: ["","", ""],
+    AllLayers: ["dus-werk-ams-2006"],
+    LegendaUIColor: ["","#38deff"],
+    LegendaUIName: ["0%", "25+%"],
     LegendaToggleButton: false,
     LegendaToggles: ["", "", ""],
-    Popuptext: [""],
-    PopupData: ["", "", ""],
-    PopupPercentage: true,
+    Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
+    PopupData: ["Ams_2006","Ams_2016"],
+    PopupPercentage: false,
     StyleDivider: "",
     InfoIcon: false,
     iconsrc: "imgs/trafficlight.png",
@@ -271,17 +283,36 @@ chapters[15] = {
 chapters[16] = {
     chapnbr:17,
     title:"2016",
-    titlerows: 2,
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["", "", ""],
-    LegendaUIColor: ["","", ""],
+    AllLayers: ["dus-werk-ams-2016"],
+    LegendaUIColor: ["","#38deff"],
+    LegendaUIName: ["0%", "25+%"],
     LegendaToggleButton: false,
     LegendaToggles: ["", "", ""],
-    Popuptext: [""],
-    PopupData: ["", "", ""],
-    PopupPercentage: true,
+    Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
+    PopupData: ["Ams_2006","Ams_2016"],
+    PopupPercentage: false,
+    StyleDivider: "",
+    InfoIcon: false,
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
+chapters[17] = {
+    chapnbr:18,
+    title:"2016 in verhouding tot 2006",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: ["dus-werk-ams-2006-2016", "dus-werk-ams-2016-2006"],
+    LegendaUIColor: ["#ff3838", "","#38deff"],
+    LegendaUIName: ["-9 punten", "geen verschil", "+9 punten"],
+    LegendaToggleButton: false,
+    LegendaToggles: ["", "", ""],
+    Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
+    PopupData: ["Ams_2006","Ams_2016"],
+    PopupPercentage: false,
     StyleDivider: "",
     InfoIcon: false,
     iconsrc: "imgs/trafficlight.png",
@@ -565,7 +596,13 @@ function LayerFilter(Chap) {
                         //fill the popoup content cue 
                         PopupHtmlContent += chapters[chapnbrpp].Popuptext[i];
                         PopupHtmlContent += ": ";
-                        PopupHtmlContent += HoverdData.properties[chapters[chapnbrpp].PopupData[i]]; //#Array seption!
+                        if (chapters[chapnbrpp].popuprounded === true) {//if rounded true then round
+                            RoundedNumber = HoverdData.properties[chapters[chapnbrpp].PopupData[i]]; //load not rounded data
+                            RoundedNumber = chapters[chapnbrpp].NbrRoundedBij * Math.ceil(RoundedNumber / chapters[chapnbrpp].NbrRoundedBij); //round bij the number defined in chapter
+                            PopupHtmlContent += RoundedNumber; //set rounded number in popup content
+                        } else { //else do not rounde
+                            PopupHtmlContent += HoverdData.properties[chapters[chapnbrpp].PopupData[i]];
+                        }   
                         if (chapters[chapnbrpp].PopupPercentage === true) {  // phisicaly add the % at the end of the value if needed.
                             PopupHtmlContent += " (";
                             //calulate a rounded percentage

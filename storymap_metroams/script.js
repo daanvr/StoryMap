@@ -111,7 +111,7 @@ chapters[5] = {
     Variables: ["weg_int", "weg_ex", "weg_door"],    
     StyleDivider : 3000,
     PopupPercentage: true,
-    PopupDataUnit: [""],    
+    PopupDataUnit: [undefined],    
     iconsrc: "imgs/trafficjam.png",
     InfoIcon: true,
     InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
@@ -137,7 +137,7 @@ chapters[6] = {
     NbrRoundedBij: 1000,
     StyleDivider : 3000,
     PopupPercentage: true,
-    PopupDataUnit: [""],    
+    PopupDataUnit: [undefined],    
     iconsrc: "imgs/trafficlight.png",
     InfoIcon: true,
     InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
@@ -172,7 +172,7 @@ chapters[9] = {
     popuprounded: true,
     NbrRoundedBij: 100,
     PopupPercentage: true,
-    PopupDataUnit: [""],    
+    PopupDataUnit: [undefined],    
     StyleDivider : 10000,
     InfoIcon: true,
     InfoText: "data: OViN & OViA, 2010-2017",
@@ -196,7 +196,7 @@ chapters[10] = {
     NbrRoundedBij: 100,
     StyleDivider : 10000,
     PopupPercentage: true,
-    PopupDataUnit: [""],    
+    PopupDataUnit: [undefined],    
     InfoIcon: true,
     InfoText: "data: OViN & OViA, 2010-2017",
     iconsrc: "imgs/truck.png",
@@ -219,7 +219,7 @@ chapters[11] = {
     NbrRoundedBij: 100,
     StyleDivider : 10000,
     PopupPercentage: true,
-    PopupDataUnit: [""],    
+    PopupDataUnit: [undefined],    
     InfoIcon: true,
     InfoText: "data: OViN & OViA, 2010-2017",
     iconsrc: "imgs/truck.png",
@@ -255,7 +255,7 @@ chapters[13] = {
     popuprounded: true,
     NbrRoundedBij: 1000,
     PopupPercentage: true,
-    PopupDataUnit: [""],    
+    PopupDataUnit: [undefined],    
     StyleDivider: "",
     InfoIcon: true,
     InfoText: "data: OViN & OViA, 2010-2017",
@@ -589,7 +589,6 @@ function LayerFilter(Chap) {
         for (var i in chapters[chapnbrpp].AllLayers) {
             //whenever the mous mouves do the following
             map.on('mousemove', chapters[chapnbrpp].AllLayers[i], function(e) {
-                map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
                 var HoverdData = e.features[0];// Single out the first found feature.
                 
                 //if popuppersentage is ture strat calculating total by adding all togather.
@@ -607,7 +606,7 @@ function LayerFilter(Chap) {
 
                 //prepare popup html content
                 var PopupHtmlContent = ""; //create var for poupup content to be pushed into 
-
+                
                 for (var i in chapters[chapnbrpp].Popuptext) {
                         //fill the popoup content cue 
                         PopupHtmlContent += chapters[chapnbrpp].Popuptext[i];
@@ -631,12 +630,20 @@ function LayerFilter(Chap) {
                             PopupHtmlContent += ")";                            
                         }
                         PopupHtmlContent += "<br>";
-                    }    
+                    }        
+
+       
+
 
                 // Display a popup with the prepared data
-                popup.setLngLat(e.lngLat) // set popup to "e" which is mouse location
-                     .setHTML("<p>" + PopupHtmlContent + "</p>") //populate the popup with html 
-                     .addTo(map); //display popup
+                if (HoverdData.properties[chapters[chapnbrpp].PopupData[0]] != undefined) { 
+                    popup.setLngLat(e.lngLat) // set popup to "e" which is mouse location
+                        .setHTML("<p>" + PopupHtmlContent + "</p>") //populate the popup with html 
+                        .addTo(map); //display popup            
+                    map.getCanvas().style.cursor = 'pointer';// Change the cursor style as a UI indicator.
+
+                } 
+
 
                 //print entirty or array data
                 console.log(HoverdData);

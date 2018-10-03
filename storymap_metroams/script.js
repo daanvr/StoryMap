@@ -82,7 +82,7 @@ chapters[2] = {
 chapters[4] = {
     chapnbr:5,
     title:"INTERN EN DOORGAAND VERKEER",
-    htmlbody:"<p>Het meeste autoverkeer op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.<br>De meeste verplaatsingen met het openbaar vervoer hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
+    htmlbody:"<p>Het meeste <b>autoverkeer</b> op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p><p>De meeste verplaatsingen met het <b>openbaar vervoer</b> hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
@@ -95,7 +95,7 @@ chapters[4] = {
 
 chapters[5] = {
     chapnbr:6,
-    title:"autoverkeer",
+    title:"Autoverkeer",
     htmlbody:"",
     location: [5,52.35, 9.5],
     maplayers: "",
@@ -111,6 +111,7 @@ chapters[5] = {
     Variables: ["weg_int", "weg_ex", "weg_door"],    
     StyleDivider : 3000,
     PopupPercentage: true,
+    PopupDataUnit: [""],    
     iconsrc: "imgs/trafficjam.png",
     InfoIcon: true,
     InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
@@ -136,6 +137,7 @@ chapters[6] = {
     NbrRoundedBij: 1000,
     StyleDivider : 3000,
     PopupPercentage: true,
+    PopupDataUnit: [""],    
     iconsrc: "imgs/trafficlight.png",
     InfoIcon: true,
     InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
@@ -152,8 +154,6 @@ chapters[8] = {
     maplayers: "",
     AllLayers: [],
     iconsrc: "imgs/polution.png",
-    InfoIcon: true,
-    InfoText: "data: OViN & OViA, 2010-2017",
     level: "0"
 };
 chapters[9] = {
@@ -162,7 +162,7 @@ chapters[9] = {
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
+    AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets", "dus-spider-names"],
     LegendaUIColor: ["#fac514","#9e001a", "#2fddf4"],
     LegendaUIName: ["OV", "Auto", "Fiets"],
     LegendaToggleButton: true,
@@ -172,8 +172,10 @@ chapters[9] = {
     popuprounded: true,
     NbrRoundedBij: 100,
     PopupPercentage: true,
+    PopupDataUnit: [""],    
     StyleDivider : 10000,
-    InfoIcon: false,
+    InfoIcon: true,
+    InfoText: "data: OViN & OViA, 2010-2017",
     iconsrc: "imgs/trafficlight.png",
     level: "1"
 };
@@ -183,7 +185,7 @@ chapters[10] = {
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk"],
+    AllLayers: ["spider_verpl_woonwerk", "spider_verpl_onderwijs", "spider_verpl_zakelijk", "dus-spider-names"],
     LegendaUIColor: ["#0febbb","#b12f8c", "#8ba6ea"],
     LegendaUIName: ["Woon-Werk", "Onderwijs", "Zakelijk"],
     LegendaToggleButton: true,
@@ -194,7 +196,9 @@ chapters[10] = {
     NbrRoundedBij: 100,
     StyleDivider : 10000,
     PopupPercentage: true,
-    InfoIcon: false,
+    PopupDataUnit: [""],    
+    InfoIcon: true,
+    InfoText: "data: OViN & OViA, 2010-2017",
     iconsrc: "imgs/truck.png",
     level: "1"
 };
@@ -204,7 +208,7 @@ chapters[11] = {
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
+    AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus", "dus-spider-names"],
     LegendaUIColor: ["#e1ece8","#bdd7cd", "#798983", "#56625e"],
     LegendaUIName: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
     LegendaToggleButton: true,
@@ -215,6 +219,9 @@ chapters[11] = {
     NbrRoundedBij: 100,
     StyleDivider : 10000,
     PopupPercentage: true,
+    PopupDataUnit: [""],    
+    InfoIcon: true,
+    InfoText: "data: OViN & OViA, 2010-2017",
     iconsrc: "imgs/truck.png",
     level: "1"
 };
@@ -229,8 +236,6 @@ chapters[12] = {
     maplayers: "",
     AllLayers: [],
     iconsrc: "imgs/polution.png",
-    InfoIcon: true,
-    InfoText: "data: OViN & OViA, 2010-2017",
     level: "0"
 };
 chapters[13] = {
@@ -250,8 +255,10 @@ chapters[13] = {
     popuprounded: true,
     NbrRoundedBij: 1000,
     PopupPercentage: true,
+    PopupDataUnit: [""],    
     StyleDivider: "",
-    InfoIcon: false,
+    InfoIcon: true,
+    InfoText: "data: OViN & OViA, 2010-2017",
     iconsrc: "imgs/trafficlight.png",
     level: "1"
 };
@@ -261,13 +268,11 @@ chapters[13] = {
 chapters[14] = {
     chapnbr:15,
     title:"AMSTERDAMSE BEROEPSBEVOLKING",
-    htmlbody:"De werkzame personen in Amsterdam zijn in toenemende mate woonachtig buiten de stad. Tussen 2006 en 2016 is het aantal gemeenten waarvan meer dan 15% van de beroepsbevolking werkt in Amsterdam toegenomen van 22 naar 31, inclusief gemeenten van buiten de Metropoolregio. Mensen leggen grotere afstand af naar hun werklocatie. Het Daily Urban System van Amsterdam groeit.",
+    htmlbody:"<p>De werkzame personen in Amsterdam zijn in toenemende mate woonachtig buiten de stad. Tussen 2006 en 2016 is het aantal gemeenten waarvan meer dan 15% van de beroepsbevolking werkt in Amsterdam toegenomen van 22 naar 31, inclusief gemeenten van buiten de Metropoolregio. Mensen leggen grotere afstand af naar hun werklocatie. Het Daily Urban System van Amsterdam groeit.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
     iconsrc: "imgs/polution.png",
-    InfoIcon: true,
-    InfoText: "data: CBS, Banen van werknemers, 2006-2016",
     level: "0"
 };
 // chapters[15] = {
@@ -316,14 +321,16 @@ chapters[17] = {
     maplayers: "",
     AllLayers: ["dus-werk-ams-2006-2016", "dus-werk-ams-2016-2006"],
     LegendaUIColor: ["#ff3838", "","#38deff"],
-    LegendaUIName: ["-9 punten", "geen verschil", "+9 punten"],
+    LegendaUIName: ["-10 procentpunt", "geen verschil", "+10 procentpunt"],
     LegendaToggleButton: false,
     LegendaToggles: ["", "", ""],
-    Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
+    Popuptext: ["2006", "2016"],
     PopupData: ["Ams_2006","Ams_2016"],
+    PopupDataUnit: ["%","%"],
     PopupPercentage: false,
     StyleDivider: "",
-    InfoIcon: false,
+    InfoIcon: true,
+    InfoText: "data: CBS, Banen van werknemers, 2006-2016",
     iconsrc: "imgs/trafficlight.png",
     level: "1"
 };
@@ -332,7 +339,7 @@ chapters[17] = {
 chapters[20] = {
     chapnbr:21,
     title:"",
-    htmlbody:"<p>Deze storymap is ontwikkeld door Goudappel Coffeng in opdracht van de Metropoolregio Amsterdam (oktober 2018).</p> <br> <img src='' style='left: -20px; position: relative;'>",
+    htmlbody:"<p>Deze storymap is ontwikkeld door Goudappel Coffeng in opdracht van de Metropoolregio Amsterdam (oktober 2018).</p> <br> <a href='https://www.goudappel.nl/'><img src='imgs/GGLogo.png' style=' position: relative; max-width: 250px; padding-left: 30px; padding-right:50px;'></a>",
     location: "",
     maplayers: "",
     AllLayers: [],
@@ -475,7 +482,7 @@ function UISelectionFeedback(Storynbr){
 
 	//Select and navigate to correct Story in sidebare
    	NewStoryDOM.classList.toggle("selected");
-   	NewStoryDOM.scrollIntoView({behavior: "smooth"});
+   	//NewStoryDOM.scrollIntoView({behavior: "smooth"}); //this scolling only works in Chrome :(
 	//Tooltip layers to be selection
 };
 
@@ -611,7 +618,11 @@ function LayerFilter(Chap) {
                             PopupHtmlContent += RoundedNumber; //set rounded number in popup content
                         } else { //else do not rounde
                             PopupHtmlContent += HoverdData.properties[chapters[chapnbrpp].PopupData[i]];
-                        }   
+                        }
+                        if (chapters[chapnbrpp].PopupDataUnit[i] != undefined) {
+                            PopupHtmlContent += "%"
+                        } 
+
                         if (chapters[chapnbrpp].PopupPercentage === true) {  // phisicaly add the % at the end of the value if needed.
                             PopupHtmlContent += " (";
                             //calulate a rounded percentage

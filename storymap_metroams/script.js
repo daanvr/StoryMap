@@ -64,7 +64,7 @@ chapters[2] = {
     // title:"DAILY URBAN SYSTEM METROPOOL REGIO AMSTERDAM",
     //title:"Daily Urban System Metropool Regio Amsterdam",
     title:"",
-    htmlbody:"<img src='imgs/metroams.png' style='left: -20px; position: relative;'> <br> <h1 style='margin: 0px;'>Daily Urban System </h1> <br> <p style='margin: 0px;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit tellus in mi aliquet faucibus. Nullam ultricies vestibulum velit et hendrerit. Donec a pellentesque enim. Vestibulum vel ligula vitae enim elementum vestibulum. Curabitur quis feugiat lorem. Donec sapien lectus, imperdiet luctus turpis vitae, viverra bibendum mi.</p><br>",
+    htmlbody:"<img src='imgs/metroams.png' style='left: -20px; position: relative;'> <br> <p style='margin: 0px;'>In deze interactieve storymap wordt het verhaal van het <b>Daily Urban System</b> van de Metropoolregio Amsterdam (MRA) verteld. Door middel van verschillende hoofdstukken en interactieve kaarten geven we inzicht in de verschillende stromen, vervoerswijzen en motieven van reizigers in de regio. Op de kaart kunt u inzoomen en de voor u interessante informatie in detail bekijken. Door op de onderstaande hoofdstukken te klikken schakelt u tussen de verschillende themas.</p><br>",
     level: "0"
 };
 
@@ -77,11 +77,12 @@ chapters[2] = {
 //     level: "1"
 // };
 
+//===================================================
 
 chapters[4] = {
     chapnbr:5,
-    title:"Intern en doorgaand verkeer",
-    htmlbody:"<br>",
+    title:"INTERN EN DOORGAAND VERKEER",
+    htmlbody:"<p>Het meeste autoverkeer op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.<br>De meeste verplaatsingen met het openbaar vervoer hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
@@ -91,10 +92,11 @@ chapters[4] = {
     InfoText: "" 
 };
 
+
 chapters[5] = {
     chapnbr:6,
-    title:"Weinig doorgaand autoverkeer",
-    htmlbody:"<p>Meeste verkeer op de snelwegen in en om Amsterdam is verkeer met een herkomst- en bestemming binnen de MRA. Op de A2 of de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, dat dus niet in de MRA begint of eindigt, is binnen  de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p>",
+    title:"autoverkeer",
+    htmlbody:"",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-weg-door", "mra-weg-ext", "mra-weg-int", "mra-weg-door-lz", "mra-weg-ext-lz", "mra-weg-int-lz"],
@@ -117,10 +119,10 @@ chapters[5] = {
 };
 chapters[6] = {
     chapnbr:7,
-    title:"Openbaar vervoer brengt mensen van en naar Amsterdam",
+    title:"Openbaar vervoer",
     titlelines: "",
     titlerows: 2,
-    htmlbody:"<p>Meeste verplaatsingen met openbaar vervoer hebben een herkomst of bestemming in Amsterdam. De spoorlijn richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
+    htmlbody:"",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: ["mra-ov-door", "mra-ov-ext", "mra-ov-int", "mra-ov-door-lz", "mra-ov-ext-lz", "mra-ov-int-lz"],
@@ -139,10 +141,13 @@ chapters[6] = {
     InfoText: "Data: <br>Verkeersmodel Amsterdam (v2.0),<br>Etmaalintensiteiten 2015 [mvt/etm]</p><p><b>Geel</b>: intern verkeer binnen de MRA. Verkeer heeft een herkomst en bestemming in de MRA.</p><p><b>Groen</b> = extern verkeer, met een herkomst of bestemming in de MRA</p><p><b>Blauw</b> = doorgaand verkeer. Dit verkeer heeft geen herkomst of bestemming in de MRA", 
     level: "1"
 };
+
+//===================================================
+
 chapters[8] = {
     chapnbr:9,
-    title:"Meeste verplaatsingen naar Amsterdam",
-    htmlbody:"<p>De meeste verplaatsingen gaan van en naar Amsterdam, waarbij de sterkste relatie die is tussen Amsterdam en Amstelland-Meerlanden. Ook de relatie tussen Waterland en Zaanstreek en Amsterdam is fors.</p><p>Verder valt op dat er grote stromen zijn naar gebieden buiten de MRA van- en naar Amsterdam. De relaties tussen andere delen van de MRA zijn relatief klein.</p>",
+    title:"REIZIGERS EN MODALITEITEN",
+    htmlbody:"<p>De meeste verplaatsingen gaan van en naar de stad Amsterdam, waarbij de sterke relatie tussen Amsterdam en Amstelland-Meerlanden opvalt. De relatie tussen Amsterdam en het gebied Waterland/Zaanstreek is eveneens fors. Verder valt op dat er grote stromen zijn naar regio’s buiten de MRA zoals Utrecht, Den Haag en Rotterdam. De relaties tussen de andere delen van de Metropoolregio zijn relatief klein.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
@@ -213,10 +218,13 @@ chapters[11] = {
     iconsrc: "imgs/truck.png",
     level: "1"
 };
+
+//===================================================
+
 chapters[12] = {
     chapnbr:13,
-    title:"Totaal aantal verplaatsingen & modal split",
-    htmlbody:"",
+    title:"MODAL SPLIT",
+    htmlbody:"<p>In de meeste gebieden binnen de regio wordt 40 tot 50% van alle verplaatsingen met de auto afgelegd. Alleen voor de gebieden binnen en langs de ring A10 neemt dit af tot 25%. In het centrum van Amsterdam is het aandeel auto slechts 10% en hebben lopen en fiets het grootste aandeel. Het openbaar vervoer speelt een bescheiden rol in de totale mobiliteit, dat komt mede omdat het grootste deel van de verplaatsingen plaats vindt over korte afstanden.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
@@ -227,9 +235,9 @@ chapters[12] = {
 };
 chapters[13] = {
     chapnbr:14,
-    title:"Verschil in mobiliteit tussen gebieden binnen en buiten de A10",
+    title:"Metropolregio Amsterdam",
     titlerows: 2,
-    htmlbody:"<p>In de meeste gebieden wordt 40 tot 50% van alle verplaatsingen met de auto afgelegd alleen voor gebieden binnen en langs de ring A10 neemt dit af tot 25% en zelfs 10% voor het centrum van Amsterdam.</p><p>Het openbaar vervoer speelt een bescheiden rol in de totale mobiliteit, dat komt mede omdat het grootste deel van de verplaatsingen plaats vindt over korte afstanden.</p>",
+    htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: ["dus-pie-auto", "dus-pie-ov", "dus-pie-fiets", "dus-pie-grenzen"],
@@ -248,11 +256,12 @@ chapters[13] = {
     level: "1"
 };
 
+//===================================================
 
 chapters[14] = {
     chapnbr:15,
-    title:"Daily-Urban-System Amsterdam dijt uit",
-    htmlbody:"Uit steeds meer gemeenten rondom Amsterdam reizen mensen voor hun werk naar Amsterdam. Tussen 2006 en 2016 is het aantal gemeenten waarvan meer dan 15% van de beroepsbevolking werkt in Amsterdam toegenomen van 22 naar 31. Hierbij ook gemeenten van buiten de Metropoolregio Amsterdam. Het Daily-Urban-System van Amsterdam groeit",
+    title:"AMSTERDAMSE BEROEPSBEVOLKING",
+    htmlbody:"De werkzame personen in Amsterdam zijn in toenemende mate woonachtig buiten de stad. Tussen 2006 en 2016 is het aantal gemeenten waarvan meer dan 15% van de beroepsbevolking werkt in Amsterdam toegenomen van 22 naar 31, inclusief gemeenten van buiten de Metropoolregio. Mensen leggen grotere afstand af naar hun werklocatie. Het Daily Urban System van Amsterdam groeit.",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
@@ -261,44 +270,44 @@ chapters[14] = {
     InfoText: "data: CBS, Banen van werknemers, 2006-2016",
     level: "0"
 };
-chapters[15] = {
-    chapnbr:16,
-    title:"2006",
-    htmlbody:"",
-    location: [5.374,52.4052, 9],
-    maplayers: "",
-    AllLayers: ["dus-werk-ams-2006"],
-    LegendaUIColor: ["","#38deff"],
-    LegendaUIName: ["0%", "25+%"],
-    LegendaToggleButton: false,
-    LegendaToggles: ["", "", ""],
-    Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
-    PopupData: ["Ams_2006","Ams_2016"],
-    PopupPercentage: false,
-    StyleDivider: "",
-    InfoIcon: false,
-    iconsrc: "imgs/trafficlight.png",
-    level: "1"
-};
-chapters[16] = {
-    chapnbr:17,
-    title:"2016",
-    htmlbody:"",
-    location: [5.374,52.4052, 9],
-    maplayers: "",
-    AllLayers: ["dus-werk-ams-2016"],
-    LegendaUIColor: ["","#38deff"],
-    LegendaUIName: ["0%", "25+%"],
-    LegendaToggleButton: false,
-    LegendaToggles: ["", "", ""],
-    Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
-    PopupData: ["Ams_2006","Ams_2016"],
-    PopupPercentage: false,
-    StyleDivider: "",
-    InfoIcon: false,
-    iconsrc: "imgs/trafficlight.png",
-    level: "1"
-};
+// chapters[15] = {
+//     chapnbr:16,
+//     title:"2006",
+//     htmlbody:"",
+//     location: [5.374,52.4052, 9],
+//     maplayers: "",
+//     AllLayers: ["dus-werk-ams-2006"],
+//     LegendaUIColor: ["","#38deff"],
+//     LegendaUIName: ["0%", "25+%"],
+//     LegendaToggleButton: false,
+//     LegendaToggles: ["", "", ""],
+//     Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
+//     PopupData: ["Ams_2006","Ams_2016"],
+//     PopupPercentage: false,
+//     StyleDivider: "",
+//     InfoIcon: false,
+//     iconsrc: "imgs/trafficlight.png",
+//     level: "1"
+// };
+// chapters[16] = {
+//     chapnbr:17,
+//     title:"2016",
+//     htmlbody:"",
+//     location: [5.374,52.4052, 9],
+//     maplayers: "",
+//     AllLayers: ["dus-werk-ams-2016"],
+//     LegendaUIColor: ["","#38deff"],
+//     LegendaUIName: ["0%", "25+%"],
+//     LegendaToggleButton: false,
+//     LegendaToggles: ["", "", ""],
+//     Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
+//     PopupData: ["Ams_2006","Ams_2016"],
+//     PopupPercentage: false,
+//     StyleDivider: "",
+//     InfoIcon: false,
+//     iconsrc: "imgs/trafficlight.png",
+//     level: "1"
+// };
 chapters[17] = {
     chapnbr:18,
     title:"2016 in verhouding tot 2006",
@@ -322,8 +331,8 @@ chapters[17] = {
 
 chapters[20] = {
     chapnbr:21,
-    title:"Einde",
-    htmlbody:"",
+    title:"",
+    htmlbody:"<p>Deze storymap is ontwikkeld door Goudappel Coffeng in opdracht van de Metropoolregio Amsterdam (oktober 2018).</p> <br> <img src='' style='left: -20px; position: relative;'>",
     location: "",
     maplayers: "",
     AllLayers: [],

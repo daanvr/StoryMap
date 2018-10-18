@@ -240,7 +240,7 @@ chapters[12] = {
 };
 chapters[13] = {
     chapnbr:14,
-    title:"Metropolregio Amsterdam",
+    title:"Metropoolregio Amsterdam",
     titlerows: 2,
     htmlbody:"",
     location: [5.374,52.4052, 9],

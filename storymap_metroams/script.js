@@ -81,8 +81,8 @@ chapters[2] = {
 
 chapters[4] = {
     chapnbr:5,
-    title:"INTERN EN DOORGAAND VERKEER",
-    htmlbody:"<p>Het meeste <b>autoverkeer</b> op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p><p>De meeste verplaatsingen met het <b>openbaar vervoer</b> hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p>",
+    title:"VERKEER BINNEN, VAN EN NAAR, EN DOOR DE MRA",
+    htmlbody:"<p>Het meeste <b>autoverkeer</b> op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p><p>De meeste verplaatsingen met het <b>openbaar vervoer</b> hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p><p><b>Let op:</b> lijnen kunnen over elkaar heen vallen, en zijn daardoor niet allemaal zichtbaar op hoog schaalniveau. <u>Door in de zoemen komen de overlapende lijnen naast elkaar te liggen.</u></p>",
     location: [5,52.35, 9.5],
     maplayers: "",
     AllLayers: [],
@@ -105,10 +105,10 @@ chapters[5] = {
     LegendaToggleButton: true,
     LegendaToggles: [["mra-weg-int", "mra-weg-int-lz"],["mra-weg-ext", "mra-weg-ext-lz"],["mra-weg-door","mra-weg-door-lz"]],
     Popuptext: ["Intern", "Extern", "Doorgaand"],
-    PopupData: ["weg_int", "weg_ex", "weg_door"],
+    PopupData: ["auto_int", "auto_ex", "auto_door"],
     popuprounded: true,
     NbrRoundedBij: 1000,
-    Variables: ["weg_int", "weg_ex", "weg_door"],    
+    Variables: ["auto_int", "auto_ex", "auto_door"],    
     StyleDivider : 3000,
     PopupPercentage: true,
     PopupDataUnit: [undefined],    
@@ -162,13 +162,13 @@ chapters[9] = {
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets", "dus-spider-names"],
-    LegendaUIColor: ["#fac514","#9e001a", "#2fddf4"],
-    LegendaUIName: ["OV", "Auto", "Fiets"],
+    AllLayers: ["spider_verpl_OV", "spider_verpl_auto", "dus-spider-names"],
+    LegendaUIColor: ["#fac514","#9e001a"],
+    LegendaUIName: ["OV", "Auto"],
     LegendaToggleButton: true,
-    LegendaToggles: ["spider_verpl_OV", "spider_verpl_auto", "spider_verpl_fiets"],
-    Popuptext: ["OV", "Auto", "Fiets"],
-    PopupData: ["TOT_OV", "TOT_auto", "TOT_fiets"],
+    LegendaToggles: ["spider_verpl_OV", "spider_verpl_auto"],
+    Popuptext: ["OV", "Auto"],
+    PopupData: ["TOT_OV", "TOT_auto"],
     popuprounded: true,
     NbrRoundedBij: 100,
     PopupPercentage: true,
@@ -208,13 +208,13 @@ chapters[11] = {
     htmlbody:"",
     location: [5.374,52.4052, 9],
     maplayers: "",
-    AllLayers: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus", "dus-spider-names"],
-    LegendaUIColor: ["#e1ece8","#bdd7cd", "#798983", "#56625e"],
-    LegendaUIName: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
-    LegendaToggleButton: true,
-    LegendaToggles: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
-    Popuptext: ["onder de 15", "van 15 tot 39", "van 40 tot 65", "65 plus"],
-    PopupData: ["LFT_15", "LFT_15_39", "LFT_40_65", "LFT_65"],
+    AllLayers: ["spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus", "dus-spider-names"],
+    LegendaUIColor: ["#bdd7cd", "#798983", "#56625e"],
+    LegendaUIName: ["onder de 39", "van 40 tot 65", "65 plus"],
+    LegendaToggleButton: false,
+    //LegendaToggles: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
+    Popuptext: ["onder de 39", "van 40 tot 65", "65 plus"],
+    PopupData: ["LFT_15_39", "LFT_40_65", "LFT_65"],
     popuprounded: true,
     NbrRoundedBij: 100,
     StyleDivider : 10000,
@@ -231,7 +231,7 @@ chapters[11] = {
 chapters[12] = {
     chapnbr:13,
     title:"MODAL SPLIT",
-    htmlbody:"<p>In de meeste gebieden binnen de regio wordt 40 tot 50% van alle verplaatsingen met de auto afgelegd. Alleen voor de gebieden binnen en langs de ring A10 neemt dit af tot 25%. In het centrum van Amsterdam is het aandeel auto slechts 10% en hebben lopen en fiets het grootste aandeel. Het openbaar vervoer speelt een bescheiden rol in de totale mobiliteit, dat komt mede omdat het grootste deel van de verplaatsingen plaats vindt over korte afstanden.</p>",
+    htmlbody:"<p>Op de kaart is de modal split van alle verplaatsingen binnen, van en naar het betreffende gebied weergegeven. In de meeste gebieden binnen de regio wordt 40 tot 50% van alle verplaatsingen met de auto afgelegd. Alleen voor de gebieden binnen en langs de ring A10 neemt dit af tot 25%. In het centrum van Amsterdam is het aandeel auto slechts 10% en hebben lopen en fiets het grootste aandeel. Het openbaar vervoer speelt een bescheiden rol in de totale mobiliteit, dat komt mede omdat het grootste deel van de verplaatsingen plaats vindt over korte afstanden.</p>",
     location: [5.374,52.4052, 9],
     maplayers: "",
     AllLayers: [],
@@ -275,44 +275,46 @@ chapters[14] = {
     iconsrc: "imgs/polution.png",
     level: "0"
 };
-// chapters[15] = {
-//     chapnbr:16,
-//     title:"2006",
-//     htmlbody:"",
-//     location: [5.374,52.4052, 9],
-//     maplayers: "",
-//     AllLayers: ["dus-werk-ams-2006"],
-//     LegendaUIColor: ["","#38deff"],
-//     LegendaUIName: ["0%", "25+%"],
-//     LegendaToggleButton: false,
-//     LegendaToggles: ["", "", ""],
-//     Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
-//     PopupData: ["Ams_2006","Ams_2016"],
-//     PopupPercentage: false,
-//     StyleDivider: "",
-//     InfoIcon: false,
-//     iconsrc: "imgs/trafficlight.png",
-//     level: "1"
-// };
-// chapters[16] = {
-//     chapnbr:17,
-//     title:"2016",
-//     htmlbody:"",
-//     location: [5.374,52.4052, 9],
-//     maplayers: "",
-//     AllLayers: ["dus-werk-ams-2016"],
-//     LegendaUIColor: ["","#38deff"],
-//     LegendaUIName: ["0%", "25+%"],
-//     LegendaToggleButton: false,
-//     LegendaToggles: ["", "", ""],
-//     Popuptext: ["Beroepsbevolking werkzaam in Amsterdam<br>2006", "2016"],
-//     PopupData: ["Ams_2006","Ams_2016"],
-//     PopupPercentage: false,
-//     StyleDivider: "",
-//     InfoIcon: false,
-//     iconsrc: "imgs/trafficlight.png",
-//     level: "1"
-// };
+chapters[15] = {
+    chapnbr:16,
+    title:"Daily Urban System 2006",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: ["dus-werk-ams-2006"],
+    LegendaUIColor: ["","#38deff"],
+    LegendaUIName: ["0%", "50+%"], // nog steeds 25%?
+    LegendaToggleButton: false,
+    //LegendaToggles: ["", "", ""],
+    Popuptext: ["2006", "2016"],
+    PopupData: ["F__ams_200","F__ams_201"],
+    PopupDataUnit: ["%","%"],
+    PopupPercentage: false,
+    StyleDivider: "",
+    InfoIcon: false,
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
+chapters[16] = {
+    chapnbr:17,
+    title:"Daily Urban System 2016",
+    htmlbody:"",
+    location: [5.374,52.4052, 9],
+    maplayers: "",
+    AllLayers: ["dus-werk-ams-2016"],
+    LegendaUIColor: ["","#38deff"],
+    LegendaUIName: ["0%", "50+%"], // nog steeds 25%?
+    LegendaToggleButton: false,
+    LegendaToggles: ["", "", ""],
+    Popuptext: ["2006", "2016"],
+    PopupData: ["F__ams_200","F__ams_201"],
+    PopupDataUnit: ["%","%"],
+    PopupPercentage: false,
+    StyleDivider: "",
+    InfoIcon: false,
+    iconsrc: "imgs/trafficlight.png",
+    level: "1"
+};
 chapters[17] = {
     chapnbr:18,
     title:"2016 in verhouding tot 2006",
@@ -321,11 +323,11 @@ chapters[17] = {
     maplayers: "",
     AllLayers: ["dus-werk-ams-2006-2016", "dus-werk-ams-2016-2006"],
     LegendaUIColor: ["#ff3838", "","#38deff"],
-    LegendaUIName: ["-10 procentpunt", "geen verschil", "+10 procentpunt"],
+    LegendaUIName: ["-10 procentpunten", "geen verschil", "+10 procentpunten"],
     LegendaToggleButton: false,
     LegendaToggles: ["", "", ""],
     Popuptext: ["2006", "2016"],
-    PopupData: ["Ams_2006","Ams_2016"],
+    PopupData: ["F__ams_200","F__ams_201"],
     PopupDataUnit: ["%","%"],
     PopupPercentage: false,
     StyleDivider: "",
@@ -728,7 +730,7 @@ function LayerToggle() {
 
     var LayerStyleProperties = new Array();
     for (i in chapters[CurrentStory].AllLayers) {
-        LayerStyleProperties[i] = map.getPaintProperty(chapters[CurrentStory].AllLayers[i], "line-width");
+        //LayerStyleProperties[i] = map.getPaintProperty(chapters[CurrentStory].AllLayers[i], "line-width");
     }
     console.log("layer 1 style: ");
     console.log(LayerStyleProperties[0]);

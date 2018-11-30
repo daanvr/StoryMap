@@ -82,7 +82,7 @@ chapters[2] = {
 chapters[4] = {
     chapnbr: 5,
     title: "VERKEER BINNEN, VAN EN NAAR, EN DOOR DE MRA",
-    htmlbody: "<p>Het meeste <b>autoverkeer</b> op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p><p>De meeste verplaatsingen met het <b>openbaar vervoer</b> hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p><p><b>Let op:</b> lijnen kunnen over elkaar heen vallen, en zijn daardoor niet allemaal zichtbaar op hoog schaalniveau. <u>Door in de zoemen komen de overlapende lijnen naast elkaar te liggen.</u></p>",
+    htmlbody: "<p>Het meeste <b>autoverkeer</b> op de snelwegen in en rondom Amsterdam heeft een herkomst- en bestemming binnen de Metropoolregio. Op de A2 en de A4 rijdt veel verkeer van en naar de MRA. Doorgaand verkeer, zonder herkomst of bestemming in de MRA, is binnen de regio alleen duidelijk zichtbaar op de A4, A5 en A9.</p><p>De meeste verplaatsingen met het <b>openbaar vervoer</b> hebben een herkomst of bestemming in de stad Amsterdam. De spoorlijnen richting Utrecht en Den Haag/Rotterdam voeren mensen aan over grotere afstanden.</p><p><b>Let op:</b> lijnen kunnen over elkaar heen vallen, en zijn daardoor niet allemaal zichtbaar op hoog schaalniveau. Door in te zoomen komen de overlappende lijnen naast elkaar te liggen.</p>",
     location: [5, 52.35, 9.5],
     maplayers: "",
     AllLayers: [],

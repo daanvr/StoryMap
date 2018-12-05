@@ -364,7 +364,7 @@ chapters[19] = {
     maplayers: "",
     AllLayers: ["dus-inwoners", "dus-population-area"], //woon grenze toevoegen
     LegendaUIColor: ["#ff3838", "", "#38deff"],
-    LegendaUIName: ["-2.000 inwoners", "geen verschil", "+50.000 inwoners"],
+    LegendaUIName: ["-2.000 inwoners", "geen verschil", "+20.000 inwoners of meer"],
     LegendaToggleButton: false,
     LegendaToggles: ["", "", ""],
     Popuptext: ["Gemeente", "2008", "2018"],

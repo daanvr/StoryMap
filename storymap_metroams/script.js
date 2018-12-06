@@ -210,10 +210,10 @@ chapters[11] = {
     maplayers: "",
     AllLayers: ["spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus", "dus-spider-names", "spider_gebiden"],
     LegendaUIColor: ["#bdd7cd", "#798983", "#56625e"],
-    LegendaUIName: ["15 tot 39", "van 40 tot 65", "65 plus"],
+    LegendaUIName: ["Van 15 tot 39", "Van 40 tot 65", "65 plus"],
     LegendaToggleButton: false,
     //LegendaToggles: ["spider_verpl_15-", "spider_verpl_15-39", "spider_verpl_40-65", "spider_verpl_65plus"],
-    Popuptext: ["15 de 39", "40 tot 65", "65 plus"],
+    Popuptext: ["Van 15 tot 39", "Van 40 tot 65", "65 plus"],  
     PopupData: ["LFT_15_39", "LFT_40_65", "LFT_65"],
     popuprounded: [true, true, true],
     NbrRoundedBij: 100,
@@ -267,7 +267,7 @@ chapters[13] = {
 
 chapters[14] = {
     chapnbr: 15,
-    title: "AMSTERDAMSE BEROEPSBEVOLKING",
+    title: "BEROEPSBEVOLKING WERKZAAM IN AMSTERDAM’",
     htmlbody: "<p>De werkzame personen in Amsterdam zijn in toenemende mate woonachtig buiten de stad. Tussen 2006 en 2016 is het aantal gemeenten waarvan meer dan 15% van de beroepsbevolking werkt in Amsterdam toegenomen van 22 naar 31, inclusief gemeenten van buiten de Metropoolregio. Mensen leggen grotere afstand af naar hun werklocatie. Het Daily Urban System van Amsterdam groeit.</p>",
     location: [5.374, 52.4052, 9],
     maplayers: "",
@@ -347,7 +347,7 @@ chapters[17] = {
 
 chapters[18] = {
     chapnbr: 19,
-    title: "Inwoners & werkgelegenheid",
+    title: "INWONERS & WERKGELEGENHEID",
     htmlbody: "<p>In de afgelopen tien jaar is het aantal inwoners van Amsterdam metmaar liefst 100.000 mensen toegenomen. Andere grote groeier is Almere. Relatief weinig groei is er in de IJmond.</p><p>Wat betreft de werkgelegenheid neemt Amsterdam het overgrote deel van degroei voor haar rekening. Het aantal banen groeit harder dan deberoepsbevolking. Dit kan tot meer pendel naar de stad leiden. Verdervalt op dat ondanks dat de crisis al een paar jaar achter ons ligt veelgemeenten een negatieve ontwikkeling van de werkgelegenheid laten zien ennog niet op het niveau van voor de crisis zitten. Met name Almere valtop.</p>",
     location: [5.374, 52.4052, 9],
     maplayers: "",
